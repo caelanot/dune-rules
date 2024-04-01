@@ -349,7 +349,10 @@
             - name: Stronghold Victory
               text: The players with the most strongholds win.
     - name: "Nexus"
-      text: h
+      children:
+        - name: Forming an Alliance
+        - name: Breaking an Alliance
+        - name: How an Alliance Functions
 
 - name: Fremen
   category: 2
