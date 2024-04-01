@@ -126,7 +126,6 @@ export class RulesService {
         marked.use({ renderer })
 
         const format = (str: string) => {
-            console.log(str)
             if (!str) return "";
             return marked.parse(str) as string;
         }
