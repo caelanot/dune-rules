@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Card from '$lib/card.svelte';
 	import { RulesService } from '$lib/rules.service';
+	import '$lib/scss/global.scss';
 
 	let p = new RulesService();
 </script>
@@ -120,15 +121,27 @@
 	.index {
 		&.major {
 			margin-right: 10px;
+
+			@media (max-width: 576px) {
+				margin-right: 5px;
+			}
 		}
 
 		&.minor {
 			margin-right: 20px;
+
+			@media (max-width: 576px) {
+				margin-right: 5px;
+			}
 		}
 
 		&.child {
 			margin-right: 20px;
 			min-width: 55px;
+
+            @media (max-width: 576px) {
+				margin-right: 5px;
+			}
 		}
 	}
 
@@ -136,6 +149,10 @@
 		&.major {
 			font-size: 36px;
 			font-weight: bold;
+
+			@media (max-width: 576px) {
+				font-size: 20px;
+			}
 		}
 
 		&.minor {
@@ -143,12 +160,20 @@
 			font-variant: small-caps;
 			font-weight: bold;
 			margin-bottom: 5px;
+
+			@media (max-width: 576px) {
+				font-size: 18px;
+			}
 		}
 
 		&.child {
 			font-size: 15px;
 			display: flex;
 			flex-direction: row;
+
+			@media (max-width: 576px) {
+				flex-wrap: wrap;
+			}
 		}
 	}
 
