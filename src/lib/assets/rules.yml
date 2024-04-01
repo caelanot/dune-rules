@@ -349,7 +349,7 @@
             - name: Stronghold Victory
               text: The players with the most strongholds win.
     - name: "Nexus"
-      text: AAAAAA
+      text: h
 
 - name: Fremen
   category: 2
