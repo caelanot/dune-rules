@@ -442,7 +442,7 @@
 
                 When the Storm is moved, move the Storm
                 the amount of spaces indicated on the card.
-            - name: Observe
+            - name: Forecast
               karama: true
               text: You may look at the next Storm Card.
         - name: Sandworms
@@ -489,11 +489,89 @@
         
         - name: Free Revival
           text: 2 forces.
+    - name: Advantages
+      children:
+        - name: Filament Book
+          text: You, and only you, may keep written notes about Treachery Cards.
+        - name: Bidding
+          karama: true
+          text: >
+            During the bidding round, you may look at each 
+            Treachery Card as it comes up for purchase before 
+            any faction bids on it
+        - name: Wormsign
+          karama: true
+          text: >
+            During `rule:1.1.6` Shipment and Movement Phase,
+            before anyone ships, you may look at the top
+            card of the Spice Deck.
+        - name: Prescience
+          karama: true
+          text: >
+            During the Battle Phase, you may force your 
+            opponent to reveal your choice of one of the four 
+            elements they will use in their Battle Plan against you:
+            the leader, the weapon, the defense, or the number 
+            dialed. If you choose to ask about a weapon or defense 
+            and your opponent tells you that they are not playing 
+            that element during this battle, you may not then ask to 
+            see a different element.
+    - name: Alliance
+      children:
+        - name: Prescience
+          karama: true
+          text: >
+            You may assist your allies by forcing their opponent to 
+            show them one element of their Battle Plan.
+    - name: Advanced Game Advantages
+      children:
+        - name: Special Karama Power
+          text: >
+            You may use a Karama Card to look at
+            any one player's entire Battle Plan.
+        - name: Kwisatz Haderach
+          text: >
+            The Kwisatz Haderach starts out inactive and
+            the Kwisatz Haderach token may not be used.
+            Use the Kwisatz Haderach card and counter token
+            to secretly keep track of forces lost in battle.
+            Once you have lost 7 or more forces in battles,
+            the Kwisatz Haderach token becomes active for
+            the rest of the game.
+          children:
+            - name: Kwisatz Haderach
+              karama: true
+              text: >
+                In your battle, you may add the Kwisatz
+                Haderach token to your leader or Cheap Hero's
+                strength in one territory per turn.
+              children:
+                - name: Unprotected
+                  text: >
+                    If the leader or Cheap Hero is killed, the
+                    Kwisatz Haderach does not add its +2 strength.
+            - name: Atreides Loyalty
+              text: >
+                A leader accompanied by Kwisatz Haderach
+                cannot turn traitor.
+            - name: Prophecy Blinded
+              text: >
+                The Kwisatz Haderach can only be killed
+                if blown up by a lasgun/shield explosion.
+            - name: Reawaken
+              text: >
+                When killed, the Kwisatz Haderach token
+                must be revived like any other leader.
+            - name: Ascension
+              text: >
+                Alive or dead, the Kwisatz Haderach
+                does not prevent the Atreides from reviving
+                other leaders.
 
 - name: Harkonnen
   category: 2
   colorcode: harkonnen
-  text: "AAA"
+  text: You excel in treachery.
   children:
     - name: Setup
       children:
@@ -509,7 +587,7 @@
 - name: Bene Gesserit
   category: 2
   colorcode: benegesserit
-  text: "AAA"
+  text: You are adept in the ways of mind control.
   children:
     - name: Setup
       children:
@@ -525,7 +603,7 @@
 - name: Spacing Guild
   category: 2
   colorcode: guild
-  text: "AAA"
+  text: You control all shipment onto and off Dune.
   children:
     - name: Setup
       children:
@@ -541,7 +619,7 @@
 - name: Emperor
   category: 2
   colorcode: emperor
-  text: "AAA"
+  text: You have access to great wealth.
   children:
     - name: Setup
       children:
@@ -557,7 +635,7 @@
 - name: Tleilaxu
   category: 2
   colorcode: tleilaxu
-  text: "AAA"
+  text: You have superior genetic engineering technology.
   children:
     - name: Setup
       children:
@@ -573,7 +651,7 @@
 - name: Ixian
   category: 2
   colorcode: ixian
-  text: "AAA"
+  text: You are skilled in technology and production.
   children:
     - name: Setup
       children:
@@ -589,7 +667,7 @@
 - name: Richese
   category: 2
   colorcode: richese
-  text: "AAA"
+  text: You have alternative technology.
   children:
     - name: Setup
       children:
@@ -621,7 +699,7 @@
 - name: Moritani
   category: 2
   colorcode: moritani
-  text: "AAA"
+  text: You resort to terrorism.
   children:
     - name: Setup
       children:
@@ -637,7 +715,7 @@
 - name: Ecaz
   category: 2
   colorcode: ecaz
-  text: "AAA"
+  text: You forge strong alliances.
   children:
     - name: Setup
       children:
