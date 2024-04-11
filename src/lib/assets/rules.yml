@@ -354,126 +354,6 @@
         - name: Breaking an Alliance
         - name: How an Alliance Functions
 
-- name: Fremen
-  category: 2
-  colorcode: fremen
-  text: You are native to Dune and know its ways.
-  children:
-    - name: Setup
-      children:
-        - name: Forces 
-          text: >
-            10 forces distributed as you like on _Sietch Tabr_,
-            _False Wall South_, and _False Wall West_;
-            and 10 forces in reserves (on the far side of Dune).
-            
-        - name: Spice
-          text: Start with 3 spice.
-        
-        - name: Free Revival
-          text: 3 forces (you cannot buy additional revivals)
-    - name: Advantages
-      children:
-        - name: Shipment
-          text: >
-            During shipment, you may bring any or all 
-            of your reserves for free onto the Great Flat or onto any 
-            one territory within two territories of the Great Flat 
-            (subject to storm and occupancy rules)
-        - name: Movement
-          karama: true
-          text: During movement, you may move your forces two territories instead of one.
-        - name: Shai-Hulud
-          children:
-            - name: Devour
-              karama: true
-              text: If Shai-Hulud appears in a territory where you have forces, they are not devoured.
-            - name: Ride the Worm
-              karama: true
-              text: >
-                Upon conclusion of the Nexus, you may ride the sandworm 
-                and move some or all of the forces in the territory to 
-                any territory subject to storm and occupancy rules.
-              children:
-                - name: Ending Territory
-                  text: Any forces in the target territory are not devoured.
-                - name: Multiple Worms
-                  text: >
-                    If Shai-Hulud appears again and you still
-                    have forces in the original territory,
-                    you may do this again.
-        - name: Fremen Special Victory Condition
-          text: >
-            If no faction has won by the end of the
-            last turn, your plans to alter Dune have
-            succeeded, and you and any allies win the 
-            game if you meet the following criteria.
-          children:
-            - name: Sietch Tabr and Habbanya Sietch
-              text: You or no one occupies _Sietch Tabr_ and _Habbanya Sietch_.
-            - name: Tuek's Sietch
-              text: Neither Harkonnen, Atreides, Emperor, nor Richese occupies _Tuek's Sietch_.
-    - name: Alliance
-      children:
-        - name: Shai-Hulud
-          karama: true
-          text: You may protect your ally from being devoured by sandworms.
-        - name: Free Revival
-          karama: true
-          text: You may raise your ally's free revival to 3.
-        - name: Fremen Special Victory Condition
-          text: >
-            Your ally wins with you when you win with the
-            `rule:2.1.2.4` Fremen Special Victory Condition.
-    - name: Advanced Advantages
-      children:
-        - name: Special Karama Power
-          text: >
-            During the `rule:1.1.2` Spice Blow Phase, use
-            a Karama Card to place a sandworm in any
-            sand territory that you wish. This is treated
-            as a normal sandworm and causes a Nexus.
-        - name: Storm Rule
-          children:
-            - name: Storm
-              text: >
-                Shuffle the Storm Deck, and randomly select
-                a card and place it next to the board.
-
-                When the Storm is moved, move the Storm
-                the amount of spaces indicated on the card.
-            - name: Forecast
-              karama: true
-              text: You may look at the next Storm Card.
-        - name: Sandworms
-          karama: true
-          text: >
-            During a Spice Blow, all additional sandworms
-            that appear after the first sandworm may be
-            placed by you in any sand territory you wish.
-        - name: Storm Losses
-          children:
-            - name: Half Loss
-              karama: true
-              text: >
-                If your forces are caught in a storm,
-                only half of them are killed (any fractions
-                are rounded up).
-            - name: Ship into Storm
-              karama: true
-              text: You may bring your reserves into storm at half loss.
-        - name: Fedaykin
-          text: Your three starred forces, Fedaykin, have a special fighting capability.
-          children:
-            - name: Fedaykin Strength
-              karama: true
-              text: Fedaykin forces are worth two normal forces in battle.
-            - name: Fedaykin Revival
-              text: Only one Fedaykin force can be revived per turn. 
-        - name: Battles
-          karama: true
-          text: Your forces do not require spice to count at their full strength.
-
 - name: Atreides
   category: 2
   colorcode: atreides
@@ -568,22 +448,6 @@
                 does not prevent the Atreides from reviving
                 other leaders.
 
-- name: Harkonnen
-  category: 2
-  colorcode: harkonnen
-  text: You excel in treachery.
-  children:
-    - name: Setup
-      children:
-        - name: Forces 
-          text: 10 forces in _Carthag_ and 10 forces in reserves.
-            
-        - name: Spice
-          text: Start with 10 spice.
-        
-        - name: Free Revival
-          text: 2 forces.
-
 - name: Bene Gesserit
   category: 2
   colorcode: benegesserit
@@ -593,22 +457,6 @@
       children:
         - name: Forces 
           text: 1 force in _Polar Sink_ and 19 forces in reserves.
-            
-        - name: Spice
-          text: Start with 5 spice.
-        
-        - name: Free Revival
-          text: 1 force.
-
-- name: Spacing Guild
-  category: 2
-  colorcode: guild
-  text: You control all shipment onto and off Dune.
-  children:
-    - name: Setup
-      children:
-        - name: Forces 
-          text: 5 forces in _Tuek's Sietch_ and 15 forces in reserves.
             
         - name: Spice
           text: Start with 5 spice.
@@ -632,21 +480,157 @@
         - name: Free Revival
           text: 1 force.
 
-- name: Tleilaxu
+- name: Fremen
   category: 2
-  colorcode: tleilaxu
-  text: You have superior genetic engineering technology.
+  colorcode: fremen
+  text: You are native to Dune and know its ways.
   children:
     - name: Setup
       children:
         - name: Forces 
-          text: 20 forces in reserves.
+          text: >
+            10 forces distributed as you like on _Sietch Tabr_,
+            _False Wall South_, and _False Wall West_;
+            and 10 forces in reserves (on the far side of Dune).
+            
+        - name: Spice
+          text: Start with 3 spice.
+        
+        - name: Free Revival
+          text: 3 forces (you cannot buy additional revivals)
+    - name: Advantages
+      children:
+        - name: Shipment
+          text: >
+            During shipment, you may bring any or all 
+            of your reserves for free onto the Great Flat or onto any 
+            one territory within two territories of the Great Flat 
+            (subject to storm and occupancy rules)
+        - name: Movement
+          karama: true
+          text: During movement, you may move your forces two territories instead of one.
+        - name: Shai-Hulud
+          children:
+            - name: Devour
+              karama: true
+              text: If Shai-Hulud appears in a territory where you have forces, they are not devoured.
+            - name: Ride the Worm
+              karama: true
+              text: >
+                Upon conclusion of the Nexus, you may ride the sandworm 
+                and move some or all of the forces in the territory to 
+                any territory subject to storm and occupancy rules.
+              children:
+                - name: Ending Territory
+                  text: Any forces in the target territory are not devoured.
+                - name: Multiple Worms
+                  text: >
+                    If Shai-Hulud appears again and you still
+                    have forces in the original territory,
+                    you may do this again.
+        - name: Fremen Special Victory Condition
+          text: >
+            If no faction has won by the end of the
+            last turn, your plans to alter Dune have
+            succeeded, and you and any allies win the 
+            game if you meet the following criteria.
+          children:
+            - name: Sietch Tabr and Habbanya Sietch
+              text: You or no one occupies _Sietch Tabr_ and _Habbanya Sietch_.
+            - name: Tuek's Sietch
+              text: Neither Harkonnen, Atreides, Emperor, nor Richese occupies _Tuek's Sietch_.
+    - name: Alliance
+      children:
+        - name: Shai-Hulud
+          karama: true
+          text: You may protect your ally from being devoured by sandworms.
+        - name: Free Revival
+          karama: true
+          text: You may raise your ally's free revival to 3.
+        - name: Fremen Special Victory Condition
+          text: >
+            Your ally wins with you when you win with the
+            `rule:2.4.2.4` Fremen Special Victory Condition.
+    - name: Advanced Advantages
+      children:
+        - name: Special Karama Power
+          text: >
+            During the `rule:1.1.2` Spice Blow Phase, use
+            a Karama Card to place a sandworm in any
+            sand territory that you wish. This is treated
+            as a normal sandworm and causes a Nexus.
+        - name: Storm Rule
+          children:
+            - name: Storm
+              text: >
+                Shuffle the Storm Deck, and randomly select
+                a card and place it next to the board.
+
+                When the Storm is moved, move the Storm
+                the amount of spaces indicated on the card.
+            - name: Forecast
+              karama: true
+              text: You may look at the next Storm Card.
+        - name: Sandworms
+          karama: true
+          text: >
+            During a Spice Blow, all additional sandworms
+            that appear after the first sandworm may be
+            placed by you in any sand territory you wish.
+        - name: Storm Losses
+          children:
+            - name: Half Loss
+              karama: true
+              text: >
+                If your forces are caught in a storm,
+                only half of them are killed (any fractions
+                are rounded up).
+            - name: Ship into Storm
+              karama: true
+              text: You may bring your reserves into storm at half loss.
+        - name: Fedaykin
+          text: Your three starred forces, Fedaykin, have a special fighting capability.
+          children:
+            - name: Fedaykin Strength
+              karama: true
+              text: Fedaykin forces are worth two normal forces in battle.
+            - name: Fedaykin Revival
+              text: Only one Fedaykin force can be revived per turn. 
+        - name: Battles
+          karama: true
+          text: Your forces do not require spice to count at their full strength.
+
+- name: Harkonnen
+  category: 2
+  colorcode: harkonnen
+  text: You excel in treachery.
+  children:
+    - name: Setup
+      children:
+        - name: Forces 
+          text: 10 forces in _Carthag_ and 10 forces in reserves.
+            
+        - name: Spice
+          text: Start with 10 spice.
+        
+        - name: Free Revival
+          text: 2 forces.
+
+- name: Spacing Guild
+  category: 2
+  colorcode: guild
+  text: You control all shipment onto and off Dune.
+  children:
+    - name: Setup
+      children:
+        - name: Forces 
+          text: 5 forces in _Tuek's Sietch_ and 15 forces in reserves.
             
         - name: Spice
           text: Start with 5 spice.
         
         - name: Free Revival
-          text: 2 forces.
+          text: 1 force.
 
 - name: Ixian
   category: 2
@@ -664,10 +648,10 @@
         - name: Free Revival
           text: 1 force.
 
-- name: Richese
+- name: Tleilaxu
   category: 2
-  colorcode: richese
-  text: You have alternative technology.
+  colorcode: tleilaxu
+  text: You have superior genetic engineering technology.
   children:
     - name: Setup
       children:
@@ -696,18 +680,18 @@
         - name: Free Revival
           text: 0 forces.
 
-- name: Moritani
+- name: Richese
   category: 2
-  colorcode: moritani
-  text: You resort to terrorism.
+  colorcode: richese
+  text: You have alternative technology.
   children:
     - name: Setup
       children:
         - name: Forces 
-          text: 6 forces in any unoccupied territory and 14 forces in reserves.
+          text: 20 forces in reserves.
             
         - name: Spice
-          text: Start with 12 spice.
+          text: Start with 5 spice.
         
         - name: Free Revival
           text: 2 forces.
@@ -724,6 +708,22 @@
             
         - name: Spice
           text: Start with 2 spice.
+        
+        - name: Free Revival
+          text: 2 forces.
+
+- name: Moritani
+  category: 2
+  colorcode: moritani
+  text: You resort to terrorism.
+  children:
+    - name: Setup
+      children:
+        - name: Forces 
+          text: 6 forces in any unoccupied territory and 14 forces in reserves.
+            
+        - name: Spice
+          text: Start with 12 spice.
         
         - name: Free Revival
           text: 2 forces.
