@@ -529,31 +529,32 @@
           text: >
             You may use any worthless card as if it was a Karama card.
         - name: Advisors
-          children:
-            - name: Advising
-              karama: true
-              text: >
-                Whenever any other faction ships forces to 
-                Dune from off-planet, you may instead ship
-                one advisor for free from your reserves into
-                that same territory (instead of the _Polar
-                Sink_). You may only do this when you do not
-                have fighters already present in that territory.
-            - name: Coexistence
-              text: >
-                Advisors coexist peacefully with other faction
-                forces in the same territory. Advisors have no
-                effect on the play of the other factions whatsoever
-                and cannot collect spice, be involved in combat,
-                prevent another faction's control of a stronghold,
-                prevent another faction from challenging a
-                stronghold (Occupancy Limit), use ornithopters,
-                or play Family Atomics. Advisors are still susceptible
-                to storms, sandworms, lasgun/shield explosions,
-                and Family Atomics.
+          text: >
+            Advisors coexist peacefully with other faction
+            forces in the same territory. Advisors have no
+            effect on the play of the other factions whatsoever
+            and cannot collect spice, be involved in combat,
+            prevent another faction's control of a stronghold,
+            prevent another faction from challenging a
+            stronghold (Occupancy Limit), use ornithopters,
+            or play Family Atomics. Advisors are still susceptible
+            to storms, sandworms, lasgun/shield explosions,
+            and Family Atomics.
+        - name: Spiritual Advisors
+          karama: true
+          text: >
+            Whenever any other faction ships forces to 
+            Dune from off-planet, you may ship
+            one advisor for free from your reserves into
+            that same territory (instead of the _Polar
+            Sink_). You may only do this when you do not
+            have fighters already present in that territory.
         - name: Fighters
+          text: >
+            When you use your normal Shipment action,
+            forces must be shipped as fighters.
           children:
-            - name: Enlistment
+            - name: Take Up Arms
               karama: true
               text: >
                 When you move advisors into an occupied territory,
