@@ -463,6 +463,130 @@
         
         - name: Free Revival
           text: 1 force.
+    - name: Advantages
+      children:
+        - name: Prediction
+          text: >
+            After `rule:0.1.3` Positions, secretly predict
+            when a faction will win, placing a turn number card
+            and a faction card face down behind your Player Shield.
+
+            If the faction you predicted wins (alone or as an ally,
+            even your ally) in the turn you predicted, reveal your
+            prediction and win alone.
+          children:
+            - name: Special Victory
+              text: >
+                You cannot predict the Spacing Guild or Fremen
+                will win with their Special Victory conditions.
+        - name: Spiritual Advisors
+          karama: true
+          text: >
+            Whenever any other faction ships forces onto Dune
+            from off-planet, you may ship 1 force for free
+            from your reserves into the _Polar Sink_.
+        - name: Voice
+          karama: true
+          text: >
+            You may command your opponent to play or not
+            play one of the following cards in their Battle Plan:
+
+            * poison weapon
+
+            * projectile weapon
+
+            * poison defense
+
+            * projectile defense
+
+            * a worthless card
+            
+            * a Cheap Hero
+            
+            * a specific special weapon by name
+            
+            * or a specific special defense by name.
+
+            
+            Your opponent must comply with your command as well as they are able to.
+    - name: Alliance
+      children:
+        - name: Voice
+          karama: true
+          text: You may Voice your ally's opponent in battle.
+    - name: Advanced Advantages
+      text: >
+        Your forces have two sides, the spiritual, striped side (advisor),
+        and the battle side with no stripes (fighter). Fighters are normal forces.
+      children:
+        - name: Charity
+          karama: true
+          text: >
+            You always receive CHOAM charity of 2 spice,
+            regardless of how much spice you already have.
+        - name: Karama
+          karama: true
+          text: >
+            You may use any worthless card as if it was a Karama card.
+        - name: Advisors
+          children:
+            - name: Advising
+              karama: true
+              text: >
+                Whenever any other faction ships forces to 
+                Dune from off-planet, you may instead ship
+                one advisor for free from your reserves into
+                that same territory (instead of the _Polar
+                Sink_). You may only do this when you do not
+                have fighters already present in that territory.
+            - name: Coexistence
+              text: >
+                Advisors coexist peacefully with other faction
+                forces in the same territory. Advisors have no
+                effect on the play of the other factions whatsoever
+                and cannot collect spice, be involved in combat,
+                prevent another faction's control of a stronghold,
+                prevent another faction from challenging a
+                stronghold (Occupancy Limit), use ornithopters,
+                or play Family Atomics. Advisors are still susceptible
+                to storms, sandworms, lasgun/shield explosions,
+                and Family Atomics.
+        - name: Fighters
+          children:
+            - name: Enlistment
+              karama: true
+              text: >
+                When you move advisors into an occupied territory,
+                they may remain as advisors or flip to fighters.
+            - name: Battle Stance
+              karama: true
+              text: >
+                When advisors are ever alone in a territory before
+                `rule:1.1.7` Battle Phase, they automatically flip to fighters.
+            - name: Unison
+              text: >
+                When you move advisors or fighters into a territory
+                where you have the opposite type, they flip to match
+                the type already in the territory.
+            - name: Ally
+              text: Advisors cannot flip to fighters with an ally present.
+            - name: Storm
+              text: Advisors cannot flip to fighters under storm.
+        - name: Intrusion
+          karama: true
+          text: >
+            When another faction ships or moves into 
+            a territory where you have fighters,
+            you may flip them to advisors.
+        - name: Battle
+          karama: true
+          text: >
+            During `rule:1.1.6` Shipment and Movement Phase,
+            before anyone ships, in each territory that
+            you have advisors, you may flip all of those
+            advisors to fighters.
+
+
 
 - name: Emperor
   category: 2
@@ -731,7 +855,7 @@
 - name: Treachery Cards
   category: 3
   colorcode: rules
-  text: oh no
+  text: "oh no"
 
 - name: Variants
   category: 4
