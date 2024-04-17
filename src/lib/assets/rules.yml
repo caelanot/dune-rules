@@ -560,7 +560,6 @@
                 When you move advisors into an occupied territory,
                 they may remain as advisors or flip to fighters.
             - name: Battle Stance
-              karama: true
               text: >
                 When advisors are ever alone in a territory before
                 `rule:1.1.7` Battle Phase, they automatically flip to fighters.
@@ -604,6 +603,36 @@
         
         - name: Free Revival
           text: 1 force.
+    - name: Advantages
+      children:
+        - name: Bidding
+          karama: true
+          text: >
+            Whenever any other faction pays spice for a Treachery
+            Card, they pay it to you instead of the Spice Bank.
+    - name: Alliance
+      children:
+        - name: Spice Trade
+          text: You may give spice to your ally at any time for any reason.
+        - name: Revivals
+          karama: true
+          text: >
+            You may pay spice for the revival of up to
+            3 extra of your ally's forces beyond their
+            current limit from the Tleilaxu Tanks.
+    - name: Advanced Advantages
+      children:
+        - name: Sardaukar
+          text: Your five starred forces, Sardaukar, have a special fighting capability.
+          children:
+            - name: Sardaukar Strength
+              karama: true
+              text: Sardaukar forces are worth two normal forces in battle.
+              children:
+                - name: Sardaukar Weakness
+                  text: Sardaukar forces are worth just one force against Fremen forces.
+            - name: Sardaukar Revival
+              text: Only one Sardaukar force can be revived per turn. 
 
 - name: Fremen
   category: 2
