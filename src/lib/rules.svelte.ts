@@ -6,12 +6,14 @@ import landsraad from "$lib/assets/landsraad.yml"
 
 import type { Rule } from "./types/rule";
 
+// export { rules };
+
+
+
 export class RulesService {
 
     public rulesmode = $state("classic")
-    private rulesselect = {"classic": classic, "landsraad": landsraad};
-
-    public indexVisibilityHash = {};
+    public rulesselect = {"classic": classic, "landsraad": landsraad};
 
     private indexRuleHash: Record<string, string> = {};
     public get indexesToRules() {
@@ -22,13 +24,13 @@ export class RulesService {
         this.loadRules("classic");
     }
 
-    private formattedRules: Record<string, Rule> = $state({});
+    private formattedRules: Record<string, Rule> = $derived(this.loadRules(this.rulesmode as "classic"|"landsraad"));
     public get rules() {
         return this.formattedRules;
     }
 
     public loadRules(rulesmodea: "classic" | "landsraad") {
-        this.formattedRules = this.getFormattedRules(this.rulesselect[rulesmodea]);
+        return this.getFormattedRules(this.rulesselect[rulesmodea])
     }
 
     public slugTitle(index: string, title: string): string {
@@ -44,6 +46,31 @@ export class RulesService {
     private getCustomRenderer() {
         const renderer = new marked.Renderer();
 
+        renderer.codespan = (token) => {
+            let text = token.text
+            if (text.includes(':')) {
+                const [type, subtype, extra] = text.split(':');
+
+                if (type === "rule") {
+                    if (!this.indexRuleHash[subtype]) return `<span class="error"> Not found: ${subtype}</span>`
+                    
+                    return `(<a href=#${this.indexRuleHash[subtype]} class="rule-link">${this.indexRuleHash[subtype].split('-')[0]}</a>)`
+                }
+
+                if (type === "glossary") {
+                    
+                }
+
+                if (type === 'faction') {
+                    return `
+                      <a href="#${this.indexRuleHash[extra]}"><img src="src/lib/assets/${type}-${subtype}.jpg" class="inline-icon" /></a>
+                    `;
+                  }
+            }
+
+            return `<code>${text}</code>`
+        }
+
         renderer.paragraph = (token) => {
             return `${marked.parseInline(token.text)}`;
         }
@@ -56,7 +83,6 @@ export class RulesService {
     }
 
     private getFormattedRules(baseRules: Record<string, any>) {
-        // const baseRules = this.rulesselect.classic;
         const renderer = this.getCustomRenderer()
 
         marked.use({renderer})
@@ -66,56 +92,51 @@ export class RulesService {
             return marked.parse(str) as string;
         }
 
-        let prev_category = -1;
-        let index_in_category = 1;
+        let index_in_category = -1;
 
         baseRules.forEach((rule: Rule, majorRuleIndex: number) => {
             index_in_category += 1;
-            if (prev_category != rule.category) {
-                prev_category = rule.category;
-                index_in_category = 1;
-            }
 
             rule.fName = format(rule.name);
             rule.fText = format(rule.text);
-            rule.index = `${rule.category}.${index_in_category}`;
-            this.indexRuleHash[rule.index] = this.slugTitle(
+            rule.index = `${index_in_category}`;
+            this.indexRuleHash[rule.id || rule.index] = this.slugTitle(
                 rule.index,
                 rule.name
             );
 
-            (rule.children || []).forEach((childRule: Rule, minorRuleIndex: number) => {
-                childRule.fName = format(childRule.name)
-                childRule.fText = format(childRule.text)
-                childRule.index = `${rule.category}.${index_in_category}.${minorRuleIndex+1}`
-                this.indexRuleHash[childRule.index] = this.slugTitle(
-                    childRule.index,
-                    childRule.name
+            (rule.children || []).forEach((minorRule: Rule, minorRuleIndex: number) => {
+                minorRule.fName = format(minorRule.name)
+                minorRule.fText = format(minorRule.text)
+                minorRule.index = `${index_in_category}.${minorRuleIndex+1}`
+                this.indexRuleHash[minorRule.id || minorRule.index] = this.slugTitle(
+                    minorRule.index,
+                    minorRule.name
                 );
                 
-                (childRule.children || []).forEach((childRule: Rule, childRuleIndex: number) => {
+                (minorRule.children)?.forEach((childRule: Rule, childRuleIndex: number) => {
                     childRule.fName = format(childRule.name)
                     childRule.fText = format(childRule.text)
-                    childRule.index = `${rule.category}.${index_in_category}.${minorRuleIndex+1}.${childRuleIndex+1}`
-                    this.indexRuleHash[childRule.index] = this.slugTitle(
+                    childRule.index = `${index_in_category}.${minorRuleIndex+1}.${childRuleIndex+1}`
+                    this.indexRuleHash[childRule.id || childRule.index] = this.slugTitle(
                         childRule.index,
                         childRule.name
                     );
 
-                    (childRule.children || []).forEach((subRule: Rule, subRuleIndex: number) => {
+                    (childRule.children)?.forEach((subRule: Rule, subRuleIndex: number) => {
                         subRule.fName = format(subRule.name)
                         subRule.fText = format(subRule.text)
-                        subRule.index = `${rule.category}.${index_in_category}.${minorRuleIndex+1}.${childRuleIndex+1}.${subRuleIndex+1}`
-                        this.indexRuleHash[subRule.index] = this.slugTitle(
+                        subRule.index = `${index_in_category}.${minorRuleIndex+1}.${childRuleIndex+1}.${subRuleIndex+1}`
+                        this.indexRuleHash[subRule.id || subRule.index] = this.slugTitle(
                             subRule.index,
                             subRule.name
                         );
 
-                        (subRule.children || []).forEach((miniRule: Rule, miniRuleIndex: number) => {
+                        (subRule.children)?.forEach((miniRule: Rule, miniRuleIndex: number) => {
                             miniRule.fName = format(miniRule.name)
                             miniRule.fText = format(miniRule.text)
-                            miniRule.index = `${rule.category}.${index_in_category}.${minorRuleIndex+1}.${childRuleIndex+1}.${subRuleIndex+1}.${miniRuleIndex+1}`
-                            this.indexRuleHash[miniRule.index] = this.slugTitle(
+                            miniRule.index = `${index_in_category}.${minorRuleIndex+1}.${childRuleIndex+1}.${subRuleIndex+1}.${miniRuleIndex+1}`
+                            this.indexRuleHash[miniRule.id || miniRule.index] = this.slugTitle(
                                 miniRule.index,
                                 miniRule.name
                             );
@@ -127,6 +148,8 @@ export class RulesService {
             });
 
         });
+
+        console.log(this.indexRuleHash)
 
         return baseRules;
     }

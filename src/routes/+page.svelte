@@ -1,38 +1,37 @@
 <script lang="ts">
-	import ChildRule from '$lib/childRule.svelte';
-	import ListRule from '$lib/listRule.svelte';
-    import MajRule from '$lib/majRule.svelte';
-	import MinRule from '$lib/minRule.svelte';
-	import rulesservice from '$lib/rules.svelte';
-	import '$lib/scss/global.scss';
-    const rules = ["classic", "landsraad"]
+  import ChildRule from '$lib/childRule.svelte';
+  import ListRule from '$lib/listRule.svelte';
+  import MajRule from '$lib/majRule.svelte';
+  import MinRule from '$lib/minRule.svelte';
+  import RuleButton from '$lib/RuleButton.svelte';
+  import rulesservice from '$lib/rules.svelte';
 
-    let namea = $state("classic")
-
-    $effect(() => {
-        rulesservice.loadRules(namea as "classic"|"landsraad")
-    })
-
+  import Button from '$lib/Button.svelte';
 </script>
 
-<select bind:value={namea}>
-    {#each rules as color}
-      <option>
-        {color}
-      </option>
-    {/each}
-</select>
+
+<div>
+  <RuleButton />
+</div>
 
 {#each Object.entries(rulesservice.rules) as [_, majorRule]}
-	<MajRule rule={majorRule}>
-		{#each Object.entries(majorRule.children || []) as [_, minorRule]}
-            <MinRule rule={minorRule}>
-                {#each Object.entries(minorRule.children || []) as [_, childRule]}
-                    <ChildRule rule={childRule}>
-                        <ListRule rule={childRule} />
-                    </ChildRule>
-                {/each}
-            </MinRule>
+  <MajRule rule={majorRule}>
+    {#each Object.entries(majorRule.children || []) as [_, minorRule]}
+      <MinRule rule={minorRule}>
+        {#each Object.entries(minorRule.children || []) as [_, childRule]}
+          <ChildRule rule={childRule}>
+            <ListRule rule={childRule} />
+          </ChildRule>
         {/each}
-    </MajRule>
+      </MinRule>
+    {/each}
+  </MajRule>
 {/each}
+
+<style lang="scss">
+  div {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+  }
+</style>

@@ -1,4 +1,4 @@
-- name: Game Setup
+- name: Setup
   colorcode: rules
   text: >
     Each faction has a set of unique economic, military,
@@ -116,7 +116,7 @@
                 Territory Card is placed face up on the Spice Deck 
                 discard pile.
             - name: Nexus
-              text: Resolve a `rule:nexusphase` Nexus
+              text: Resolve a `rule:1.1.10` Nexus
     - name: CHOAM Charity Phase
       text: Players with 0 or 1 spice may claim CHOAM Charity.
     - name: Bidding Phase
@@ -346,8 +346,7 @@
               text: If Spacing Guild is in the game, the Spacing Guild wins.
             - name: Stronghold Victory
               text: The players with the most strongholds win.
-    - name: Nexus
-      id: nexusphase
+    - name: "Nexus"
       children:
         - name: Forming an Alliance
         - name: Breaking an Alliance
@@ -355,7 +354,6 @@
 
 - name: Atreides
   colorcode: atreides
-  id: faction atreides
   text: You have limited prescience.
   children:
     - name: Setup
@@ -677,7 +675,6 @@
                     have forces in the original territory,
                     you may do this again.
         - name: Fremen Special Victory Condition
-          id: fsvc
           text: >
             If no faction has won by the end of the
             last turn, your plans to alter Dune have
@@ -699,7 +696,7 @@
         - name: Fremen Special Victory Condition
           text: >
             Your ally wins with you when you win with the
-            `rule:fsvc` Fremen Special Victory Condition.
+            `rule:2.4.2.4` Fremen Special Victory Condition.
     - name: Advanced Advantages
       children:
         - name: Special Karama Power
@@ -873,14 +870,6 @@
   colorcode: rules
   children:
     - name: Treachery Card List
-      children:
-        - name: Baliset
-          text: >
-            Worthless card.
-            Play as part of your Battle Plan,
-            in place of a weapon, defense, or both.
-            This card has no value in play, and you can discard
-            it only by playing it in your Battle Plan.
     - name: First Expansion - Ixians & Tleilaxu
     - name: Second Expansion - CHOAM & Richese
     - name: Third Expansion - Ecaz & Moritani
@@ -929,13 +918,7 @@
           text: If you lose a battle, force your opponent to discard or keep any or all Treachery Cards they played
     - name: Glossary
       children:
-        - name: Active Leaders
+        - name: Active Leader
           text: >
             Leaders that are under your control (in your leader pool).
             Leaders in the tanks are not active leaders for any faction.
-        - name: Aggressor
-          text: The player earlier in Storm Order.
-        - name: Put
-          id: glossary put
-          text: >
-            Setting a game component off the Board (for example: near the board, in front or behind a Player Shield).

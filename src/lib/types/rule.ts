@@ -8,6 +8,7 @@ export type Rule = {
     text: string;
     children: Rule[];
     karama: boolean;
+    id: string;
 
     // Output
     fName: string;
