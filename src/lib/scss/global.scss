@@ -46,20 +46,26 @@ html {
 }
 
 .inline-icon {
-    max-height: 16px;
-    max-width: 16px;
+    max-height: 20px;
+    max-width: 20px;
     border-radius:50%;
     overflow:hidden;
     display: inline;
+    margin-bottom: -4px;
 }
 
 a {
     color:var(--color--text);
     text-decoration: none;
-}
 
-a.rule-link {
-    color: red;
+    &.rule-link {
+        color: var(--color--primary);
+    }
+
+    &.glossary-link {
+        color:var(--color--secondary);
+        font-weight:bold;
+    }
 }
 
 .error {
@@ -68,12 +74,12 @@ a.rule-link {
 
 a:not(.rule-link) {
     &:hover {
-        color: red;
+        color: var(--color--primary);
         text-decoration: underline;
     }
 
     &.karama {
-        color: blue;
+        color: var(--color--secondary);
     }
 
     &.name {

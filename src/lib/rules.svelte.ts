@@ -54,16 +54,16 @@ export class RulesService {
                 if (type === "rule") {
                     if (!this.indexRuleHash[subtype]) return `<span class="error"> Not found: ${subtype}</span>`
                     
-                    return `(<a href=#${this.indexRuleHash[subtype]} class="rule-link">${this.indexRuleHash[subtype].split('-')[0]}</a>)`
+                    return `(<a href=#${this.indexRuleHash[subtype]} class="rule-link">${extra||""}${this.indexRuleHash[subtype].split('-')[0]}</a>)`
                 }
 
                 if (type === "glossary") {
-                    
+                    return `<a href=#${this.indexRuleHash[subtype]} class="glossary-link">${(extra||subtype).toLocaleUpperCase()}</a>`
                 }
 
                 if (type === 'faction') {
                     return `
-                      <a href="#${this.indexRuleHash[extra]}"><img src="src/lib/assets/${type}-${subtype}.jpg" class="inline-icon" /></a>
+                      <a href="#${this.indexRuleHash[extra]}"><img src="src/lib/assets/icons/${subtype}.jpg" class="inline-icon" /></a>
                     `;
                   }
             }
@@ -148,8 +148,6 @@ export class RulesService {
             });
 
         });
-
-        console.log(this.indexRuleHash)
 
         return baseRules;
     }

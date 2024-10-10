@@ -11,9 +11,11 @@
     A player may win alone or in an Alliance with other players.
   children:
     - name: Prepare
-      text: >
-        Place all spice tokens in the Spice Bank.
-        Shuffle the Spice Deck and Treachery Deck.
+      children:
+        - name: Spice Deck
+          text: Shuffle the Spice Deck and `glossary:put` it face down next to the board.
+        - name: Treachery Deck
+          text: Shuffle the Treachery Deck and `glossary:put` it face down next to the board.
     - name: Assign Factions
       text: >
         Assign one faction to each player in any way.
@@ -897,6 +899,18 @@
     - name: Spice Cards
     - name: Traitor Cards
     - name: Homeworlds
+      text: hskdjghj
+      children: 
+        - name: Atreides
+          children:
+            - name: Betrayal
+              text: Prevent the Atreides Battle advantage of seeing one element of any Battle Plan.
+            - name: Cunning
+              text: Force your opponent to show you a second element of their Battle Plan.
+            - name: Secret Ally
+              text: >
+                During a battle, force your opponent to reveal your
+                choice of one element of their Battle Plan: leader, weapon, defense, or number dialed. 
 
 - name: Appendix
   colorcode: rules
@@ -935,7 +949,9 @@
             Leaders in the tanks are not active leaders for any faction.
         - name: Aggressor
           text: The player earlier in Storm Order.
+        - name: Force
+          text: One of a player's twenty tokens indicated by an image of a soldier.
         - name: Put
-          id: glossary put
+          id: put
           text: >
             Setting a game component off the Board (for example: near the board, in front or behind a Player Shield).
