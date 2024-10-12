@@ -64,6 +64,8 @@ a {
 
     &.glossary-link {
         color:var(--color--secondary);
+        font-size: 90%;
+        // font-variant: small-caps;
         font-weight:bold;
     }
 }

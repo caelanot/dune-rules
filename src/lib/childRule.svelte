@@ -32,6 +32,11 @@
   .index {
     margin-right: 20px;
     min-width: 55px;
+    @media (max-width: 576px) {
+      margin-right: 0px;
+      min-width: 30px;
+      width: 100%;
+    }
   }
 
   .rule {

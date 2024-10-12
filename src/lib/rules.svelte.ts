@@ -50,10 +50,9 @@ export class RulesService {
             let text = token.text
             if (text.includes(':')) {
                 const [type, subtype, extra] = text.split(':');
+                if (!this.indexRuleHash[subtype]) return `<span class="error"> Not found: ${subtype}</span>`
 
                 if (type === "rule") {
-                    if (!this.indexRuleHash[subtype]) return `<span class="error"> Not found: ${subtype}</span>`
-                    
                     return `(<a href=#${this.indexRuleHash[subtype]} class="rule-link">${extra||""}${this.indexRuleHash[subtype].split('-')[0]}</a>)`
                 }
 
@@ -148,6 +147,8 @@ export class RulesService {
             });
 
         });
+
+        // console.log(this.indexRuleHash)
 
         return baseRules;
     }
