@@ -91,7 +91,7 @@ export class RulesService {
             return marked.parse(str) as string;
         }
 
-        let index_in_category = -1;
+        let index_in_category = 0;
 
         baseRules.forEach((rule: Rule, majorRuleIndex: number) => {
             index_in_category += 1;

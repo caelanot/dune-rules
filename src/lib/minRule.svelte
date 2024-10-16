@@ -28,6 +28,8 @@
 
   .index {
     margin-right: 20px;
+    min-width: 35px;
+    display: inline-block;
   }
 
   .rule {

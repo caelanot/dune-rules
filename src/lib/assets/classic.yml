@@ -1,19 +1,35 @@
+- name: Golden Rules
+  colorcode: rules
+  children:
+    - name: Rules Conflicts
+      children:
+        - name: Faction
+          text: A faction's abilities may contradict the rules. Faction abilities take precedence.
+        - name: Treachery Card
+          text: A Treachery Card may contradict the rules or faction abilities. Treachery cards take precedence.
+        - name: Variant
+          text: A variant may contradict the rules, faction abilities, or Treachery Card. Variants take precedence.
+    - name: Public and Private Information
+      children:
+        - name: Spice
+          text: The amount of spice that any player holds can be kept secret at all times.
+        - name: Treachery Cards
+          text: >
+            The amount of Treachery Cards that any player holds can be kept secret
+            at any time other than the Bidding Phase.
+        - name: Discard
+          text: The Treachery Card discard pile is not public and cannot be searched.
+    - name: Bribes and Deals
+
+
 - name: Game Setup
   colorcode: rules
-  text: >
-    Each faction has a set of unique economic, military,
-    strategic, or treacherous advantages. The object of the
-    game is to use these advantages to gain control of Dune.
-    The winner is the _First Player_ to occupy at least 3
-    strongholds with at least one of their forces during
-    the Mentat Pause Phase.
-
-    A player may win alone or in an Alliance with other players.
   children:
     - name: Prepare
       children:
         - name: Spice Bank
-          text: Place all spice tokens into the Spice Bank.
+          text: >
+            `glossary:place` all spice tokens in the Spice Bank.
         - name: Spice Deck
           text: Shuffle the Spice Deck and `glossary:put` it face down next to the board.
         - name: Treachery Deck
@@ -31,41 +47,65 @@
             Players place their Player Marker on the player circle
             closest to their shield and seat at the table.
     - name: Traitors
-      text: >
-        Remove the cards for all factions that are not in play from the Traitor Deck.
-        Shuffle the cards thoroughly and deal each player 4 cards.
-        Each player secretly selects 1 card to keep by placing
-        their chosen card face down behind their Player Shield,
-        returning the other cards face down to the Traitor Deck.
+      children:
+        - name: Step 1
+          text: Remove the cards for all factions that are not in play from the Traitor Deck.
+        - name: Step 2
+          text: Shuffle the Traitor Deck thoroughly and deal 4 cards to each player.
+        - name: Step 3
+          text: Each player secretly selects 1 card to keep, `glossary:put:putting` it face down behind their Player Shield.
+        - name: Step 4
+          text: The other cards will be `glossary:put` face down next to their Player Marker.
     - name: Setup Factions
       children:
         - name: Spice
+          text: >
+            Spice equal to the amount indicated by each faction's At Start - Spice
+            ability is removed from the Spice Bank and `glossary:put` behind each player's respective shield.
         - name: Forces
-    - name: Treachery
-      text: Deal 1 card from the Treachery Deck to each player.
-    - name: Turn Marker
-      text: Place the turn marker at 1 on the Turn Track.
-    - name: First Storm
-      text: >
-        The Storm Marker is placed at a random location along the map edge using the following
-        procedure - the two players whose Player Markers are nearest on either side of the Storm
-        Start Sector secretly dial a number from 0 to 20 on the Battle Wheels. The two numbers are
-        simultaneously revealed and totaled, and the Storm Marker moved from the Storm Start Sector 
-        _counterclockwise_ around the map the sum total of sectors.
+          text: >
+            Each player's `glossary:force:forces` are `glossary:place:placed` on the board
+            as indicated by each faction's At Start - Forces ability. All forces in reserves
+            are `glossary:put` in front of each player's respective shield.
+        - name: Remaining
+          text: >
+            Each player completes any remaining At Start abilities for their faction.
+    - name: First Turn
+      children:
+        - name: Starting Treachery Card
+          text: Deal 1 card from the Treachery Deck to each player.
+        - name: Turn Marker
+          text: Place the turn marker at 1 on the Turn Track.
+        - name: First Storm
+          text: >
+            The Storm Marker is placed at a random location along the map edge using the following
+            procedure - the two players whose Player Markers are nearest on either side of the Storm
+            Start Sector secretly dial a number from 0 to 20 on the Battle Wheels. The two numbers are
+            simultaneously revealed and totaled, and the Storm Marker moved from the Storm Start Sector 
+            _counterclockwise_ around the map the sum total of sectors.
+
 
 - name: Sequence of Play
   colorcode: rules
-  text: DUNE is played over the course of up to 10 turns. Each turn consists of nine specific phases that must be completed in the exact sequence presented below.
   children:
     - name: Storm Phase
+      id: stormphase
     - name: Spice Blow and Nexus Phase
+      id: spicephase
     - name: CHOAM Charity Phase
+      id: choamphase
     - name: Bidding Phase
+      id: biddingphase
     - name: Revival Phase
+      id: revivalphase
     - name: Shipment and Movement Phase
+      id: shipmovephase
     - name: Battle Phase
+      id: battlephase
     - name: Spice Collection Phase
+      id: collectphase
     - name: Mentat Pause Phase
+      id: mentatphase
 
 - name: Atreides
   colorcode: atreides
@@ -79,6 +119,10 @@
             text: Start with 10 spice.
           - name: Forces
             text: 10 `glossary:force:forces` in _Arrakeen_ and 10 forces in reserves.
+          - name: Spice and Treachery Decks
+            text: >
+              Take the Spice Deck and Treachery Deck, and `glossary:put`
+              them near your player position. You manage these decks.
         - name: Free Revival
           text: 2 `glossary:force:forces`.
     - name: Advantages
@@ -97,6 +141,7 @@
             During the Shipment and Movement Phase `rule:shipmovephase`,
             before anyone ships, you may look at the top card of the Spice Deck.
         - name: Prescience
+          id: battleprescience
           karama: true
           text: >
             During the Battle Phase, you may force your 
@@ -112,8 +157,7 @@
         - name: Prescience
           karama: true
           text: >
-            You may assist your allies by forcing their opponent to 
-            show them one element of their Battle Plan.
+            You may use ability **Prescience** `rule:battleprescience` in your ally's battle.
     - name: Advanced Game Advantages
       children:
         - name: Special Karama Power
@@ -163,6 +207,9 @@
             text: Start with 5 spice.
           - name: Forces
             text: 1 `glossary:force` in _Polar Sink_ and 19 forces in reserves.
+            children:
+              - name: Advanced
+                text: In Advanced, 1 **Advisor** in any `glossary:territory` on the `glossary:map`.
         - name: Free Revival
           text: 1 `glossary:force`.
     - name: Advantages
@@ -263,6 +310,7 @@
                     have forces in the original territory,
                     you may do this again.
         - name: Fremen Special Victory Condition
+          id: fsvc
           text: >
             If no faction has won by the end of the
             last turn, your plans to alter Dune have
@@ -284,7 +332,7 @@
         - name: Fremen Special Victory Condition
           text: >
             Your ally wins with you when you win with the
-            `rule:2.4.2.4` Fremen Special Victory Condition.
+            `rule:fsvc` Fremen Special Victory Condition.
     - name: Advanced Advantages
       children:
         - name: Special Karama Power
@@ -478,26 +526,99 @@
     - name: Treachery Card List
       children:
         - name: Baliset
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
         - name: Chaumas
+          text: >
+            Poison Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Poison Defense.
+            You may keep this card if you win this battle.
         - name: Chaumurky
+          text: >
+            Poison Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Poison Defense.
+            You may keep this card if you win this battle.
         - name: Cheap Hero
         - name: Crysknife
+          text: >
+            Projectile Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Projectile Defense.
+            You may keep this card if you win this battle.
         - name: Ellaca Drug
+          text: >
+            Poison Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Poison Defense.
+            You may keep this card if you win this battle.
         - name: Family Atomics
         - name: Gom Jabbar
+          text: >
+            Poison Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Poison Defense.
+            You may keep this card if you win this battle.
         - name: Hajr
         - name: Jubba Cloak
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
         - name: Karama
         - name: Kulon
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
         - name: La, La, La
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
         - name: Lasgun
         - name: Maula Pistol
+          text: >
+            Projectile Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Projectile Defense.
+            You may keep this card if you win this battle.
         - name: Shield
         - name: Slip Tip
+          text: >
+            Projectile Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Projectile Defense.
+            You may keep this card if you win this battle.
         - name: Snooper
         - name: Stunner
+          text: >
+            Projectile Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Projectile Defense.
+            You may keep this card if you win this battle.
         - name: Tleilaxu Ghola
         - name: Trip to Gamont
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
         - name: Truthtrance
         - name: Weather Control
     - name: Expansion 1 - Ixians & Tleilaxu
@@ -548,14 +669,50 @@
           text: If you lose a battle, force your opponent to discard or keep any or all Treachery Cards they played.
     - name: Glossary
       children:
+        - name: Aggressor
+          id: aggressor
+          text: The player earlier in `glossary:stormorder:storm order`.
+        - name: Bribe
+        - name: Buy
+        - name: Control
+          id: control
+          text: >
+            `glossary:occupy:occupying` a `glossary:territory` during the 
+            Mentat Pause Phase with no other faction's forces occupying that 
+            same territory.
+        - name: Deal
+        - name: Enter
+        - name: First Player
         - name: Force
           id: force
           text: >
             One of a player's twenty tokens indicated by an image of a soldier,
             that is used for Occupancy, Battles, Control, and Spice Collection.
+        - name: Map
+          id: map
+          text: >
+            All `glossary:territory:territories` printed on the game board.
+            Tokens on the board, even Territory tokens, are not a part of the map.
+        - name: Move
+          id: move
+        - name: Occupy
+          id: occupy
+          text: Having at least one `glossary:force` in a `glossary:territory`
+        - name: Place
+          id: place
         - name: Put
           id: put
+        - name: Sector
+          id: sector
         - name: Send
           id: send
+          text: To `glossary:place` or `glossary:put` tokens without paying spice.
         - name: Ship
           id: ship
+          text: To `glossary:place` or `glossary:put` tokens by paying spice.
+        - name: Storm Order
+          id: stormorder
+        - name: Stronghold
+        - name: Supply
+        - name: Territory
+          id: territory

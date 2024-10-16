@@ -1,4 +1,4 @@
-- name: Setup
+- name: Game Setup
   colorcode: rules
   text: >
     Each faction has a set of unique economic, military,
@@ -11,361 +11,91 @@
     A player may win alone or in an Alliance with other players.
   children:
     - name: Prepare
-      text: >
-        Place all spice tokens in the Spice Bank.
-        Shuffle the Spice Deck and Treachery Deck.
-    - name: Assign Factions
-      text: >
-        Assign one faction to each player in any way.
-        Determine the seating order randomly.
-        Each player takes their chosen faction's player shield, sheet, and pieces.
-    - name: Positions
-      text: >
-        Players place their Player Marker on the player
-        circle closest to their shield and seat at the table.
+      children:
+        - name: Spice Bank
+          text: Place all spice tokens into the Spice Bank.
+        - name: Spice Deck
+          text: Shuffle the Spice Deck and `glossary:put` it face down next to the board.
+        - name: Treachery Deck
+          text: Shuffle the Treachery Deck and `glossary:put` it face down next to the board.
+    - name: Assign Factions and Positions
+      children:
+        - name: Seat Players
+          text: Determine the seating order randomly.
+        - name: Choose Factions
+          text: Assign one faction to each player in any way.
+        - name: Take Faction
+          text: Each player takes their chosen faction's player shield, sheet, and pieces.
+        - name: Take Position
+          text: >
+            Players place their Player Marker on the player circle
+            closest to their shield and seat at the table.
     - name: Traitors
-      text: >
-        Remove the cards for all factions that are not in play from the Traitor Deck.
-        Shuffle the cards thoroughly and deal each player 4 cards.
-        Each player secretly selects 1 card to keep by placing
-        their chosen card face down behind their Player Shield,
-        returning the other cards face down to the Traitor Deck.
-    - name: Spice
-      text: Spice equal to the amount indicated on each player sheet is removed from the Spice Bank and placed behind each shield.
-    - name: Forces
-      text: Each player's forces are placed on the board as indicated by their player sheet. All forces in reserve are placed next to your shield.
-    - name: Treachery
-      text: Deal 1 card from the Treachery Deck to each player.
-    - name: Turn Marker
-      text: Place the turn marker at 1 on the Turn Track.
-    - name: First Storm
-      text: >
-        The Storm Marker is placed at a random location along the map edge using the following
-        procedure - the two players whose Player Markers are nearest on either side of the Storm
-        Start Sector secretly dial a number from 0 to 20 on the Battle Wheels. The two numbers are
-        simultaneously revealed and totaled, and the Storm Marker moved from the Storm Start Sector 
-        _counterclockwise_ around the map the sum total of sectors.
+      children:
+        - name: Step 1
+          text: Remove the cards for all factions that are not in play from the Traitor Deck.
+        - name: Step 2
+          text: Shuffle the Traitor Deck thoroughly and deal 4 cards to each player.
+        - name: Step 3
+          text: Each player secretly selects 1 card to keep, `glossary:put:putting` it face down behind their Player Shield.
+        - name: Step 4
+          text: The other cards will be `glossary:put` face down next to their Player Marker.
+    - name: Setup Factions
+      children:
+        - name: Spice
+          text: >
+            Spice equal to the amount indicated by each faction's At Start - Spice
+            ability is removed from the Spice Bank and `glossary:put` behind each player's respective shield.
+        - name: Forces
+          text: >
+            Each player's `glossary:force:forces` are `glossary:place:placed` on the board
+            as indicated by each faction's At Start - Forces ability. All forces in reserves
+            are `glossary:put` in front of each player's respective shield.
+        - name: Remaining
+          text: >
+            Each player completes any remaining At Start abilities for their faction.
+    - name: First Turn
+      children:
+        - name: Starting Treachery Card
+          text: Deal 1 card from the Treachery Deck to each player.
+        - name: Turn Marker
+          text: Place the turn marker at 1 on the Turn Track.
+        - name: First Storm
+          text: >
+            The Storm Marker is placed at a random location along the map edge using the following
+            procedure - the two players whose Player Markers are nearest on either side of the Storm
+            Start Sector secretly dial a number from 0 to 20 on the Battle Wheels. The two numbers are
+            simultaneously revealed and totaled, and the Storm Marker moved from the Storm Start Sector 
+            _counterclockwise_ around the map the sum total of sectors.
 
 - name: Sequence of Play
   colorcode: rules
   text: DUNE is played over the course of up to 10 turns. Each turn consists of nine specific phases that must be completed in the exact sequence presented below.
   children:
     - name: Storm Phase
-      text: The Storm Marker is moved around the map. The faction whose Player Marker the storm next approaches will be the _First Player_ for this turn.
-      children:
-        - name: Storm Movement
-          text: >
-            In all Storm Phases after turn 1, the two
-            players who last used the Battle Wheels will
-            independently dial a number from 1 to 3,
-            simultaneously reveal their numbers, add them
-            together, and then advance the Storm Marker
-            from its current position _counterclockwise_
-            around the map for the sum total of sectors.
-        - name: Damage
-          text: >
-            Any forces in a sector of sand territory
-            (except the Imperial Basin) over which the storm
-            passes or stops are killed. Place these forces
-            in the Tleilaxu Tanks. Forces that are not on a
-            sand territory find protection from the storm.
-            In addition, any spice in a sector over which
-            a storm passes or stops is removed to the Spice Bank.
-        - name: Obstruction
-          text: >
-            Forces may not move into, out of, or through a
-            sector in storm. Forces may not battle if either
-            force is in storm.
-        - name: First Player
-          text: >
-            The player whose Player Marker the storm next
-            approaches is the _First Player_ for this turn.
-
     - name: Spice Blow and Nexus Phase
-      text: >
-        The top card of the Spice Deck is turned over and the amount of spice shown on the card is placed in the highlighted territory.
-        If Shai-Hulud appears during the Spice Blow Phase, a Nexus occurs and the players have the opportunity to make and break Alliances.
-      children:
-        - name: Top Card
-          text: The top card of the Spice Deck is turned over.
-        - name: First Turn
-          text: During the first turn's Spice Blow Phase only, all sandworm cards turned over are ignored and set aside, then reshuffled back into the Spice Deck after this phase.
-        - name: Territory
-          text: >
-            This is a Spice Blow.
-            The amount of spice indicated on the card is taken
-            from the Spice Bank and placed onto the territory
-            in the sector containing the Spice Blow icon.
-            Then this card is placed face up on the Spice Deck discard pile.
-            (If the Spice Blow icon is currently in storm, no spice is placed that turn.)
-        - name: Shai-Hulud
-          children:
-            - name: Devour
-              text: >
-                All spice and forces in the territory shown on the 
-                card now face up in the discard pile are removed to 
-                the Spice Bank and Tleilaxu Tanks respectively. Then 
-                the Shai-Hulud card is placed face up on the Spice 
-                Deck discard pile.
-            - name: Blow
-              text: >
-                Then another card is turned over. If it is a Shai-Hulud 
-                it is immediately discarded and another card is 
-                turned over. This continues until a Territory Card 
-                appears and spice is placed as defined above. The 
-                Territory Card is placed face up on the Spice Deck 
-                discard pile.
-            - name: Nexus
-              text: Resolve a `rule:1.1.10` Nexus
     - name: CHOAM Charity Phase
-      text: Players with 0 or 1 spice may claim CHOAM Charity.
     - name: Bidding Phase
-      text: Players bid spice to acquire Treachery Cards.
-      children:
-        - name: Declaration
-          text: Before bidding starts, all players must declare how many Treachery Cards they hold.
-          children:
-            - name: Hand Limit
-              text: The hand limit is 4 cards.
-            - name: Eligible to Bid
-              text: Players at the hand limit are not eligible to bid and must pass during bidding.
-        - name: Dealer
-          text: >
-            One of the players deals cards from the
-            Treachery Deck face down in a row, 1 card
-            for each player who is eligible to bid.
-        - name: Auction
-          text: The first card in the row is now auctioned off for spice.
-          children:
-            - name: Starting Bid
-              text: >
-                The bidding is started by the _First Player_.
-                If that player is ineligible to bid, the next
-                player to the right who is eligible opens the bidding.
-            - name: Bidding
-              text: >
-                The player who bids first must bid 1 or more spice 
-                or pass. Bidding then proceeds to the bidder's 
-                immediate right. The next bidder may raise the bid 
-                or pass and so on around the table until a top bid 
-                is made and all other players pass. The top bidding 
-                player then pays the number of spice they bid into 
-                the Spice Bank and takes the card.
-        - name: Bid Limit
-          text: Players may not bid more spice than they have.
-        - name: Next Starting Bidder
-          text: >
-            In subsequent bidding during this phase, the first 
-            eligible player to the right of the player who
-            opened the bid for the previous card begins the
-            bidding for the next card.
-        - name: End of Bidding
-          children:
-            - name: Full Auction
-              text: >
-                Bidding for Treachery Cards continues until all
-                cards available for bid have been auctioned off.
-            - name: Unwanted
-              text: >
-                If a card is passed on by everyone, all remaining
-                cards are returned in order to the top of the
-                Treachery Deck and the Bidding Phase is over.
-        - name: Transparency
-          text: >
-            The number of Treachery Cards a player has in
-            their hand must be revealed upon request by
-            another player during the Bidding Phase.
-        - name: Time Limit
-          text: >
-            Each player must bid within 10 seconds of the 
-            previous player, or they are assumed to have
-            passed.
     - name: Revival Phase
-      text: All players are allowed to reclaim forces and leaders from the Tleilaxu Tanks.
-      children:
-        - name: Force Revival
-          text: All players may now revive up to 3 forces from the Tleilaxu Tanks.
-          children:
-            - name: Free
-              text: A certain number of forces are revived for free as stated on the player sheet.
-            - name: Spice
-              text: >
-                Any additional forces that may be revived must
-                be done at a cost of 2 spice per force.
-            - name: To Reserves
-              text: Revived forces must be placed in the player's reserves.
-        - name: Leader Revival
-          text: >
-            When a player has no Active Leaders, they may revive
-            1 face up leader per turn.
-          children:
-            - name: Fighting Strength
-              text: >
-                To revive a leader, a player must pay that
-                leader's fighting strength in spice.
-            - name: Revived Leader Status
-              text: >
-                A revived leader can be played normally
-                and is still subject to being a traitor.
-            - name: Dead Again
-              text: >
-                If a revived leader is killed again, place
-                it face down in the Tleilaxu Tanks.
-                This leader cannot be revived until all of
-                the player's other revivable leaders have
-                been revived, killed, and sent to the
-                Tleilaxu Tanks again.
-        - name: Spice Bank
-          text: All spice paid for revival is placed in the Spice Bank.
     - name: Shipment and Movement Phase
-      text: >
-        Starting with the _First Player_ and proceeding
-        _counterclockwise_, each player in turn ships forces
-        down to the planet or brings in forces from the
-        Southern Hemisphere (Fremen) and then moves their
-        forces on the game board.
-      children:
-        - name: Force Shipment
-          children:
-            - name: Shipment of Reserves
-              text: >
-                A player with off-planet reserves may make
-                one shipment of any number of forces from
-                their reserves to any one territory
-                on the map.
-            - name: Payment
-              text: >
-                A player must pay spice to the Spice Bank.
-            - name: Price
-              text: >
-                The cost of shipping off-planet reserves is
-                1 spice per force shipped into any stronghold,
-                and 2 spice per force shipped into any
-                non-stronghold territory.
-            - name: Sectors
-              text: >
-                When shipping into a territory lying in several
-                sectors, a player must make clear in which sector
-                of the territory they choose to leave their forces.
-            - name: Exceptions
-              children:
-                - name: Storm
-                  text: No player may ship into or out of a sector in Storm.
-                - name: Occupancy Limit
-                  text: No player may ship into a stronghold already occupied by two other players.
-                - name: One Way
-                  text: No player may ship forces from the board back to their reserves.
-        - name: Force Movement
-          text: >
-            Each player may move, as a group, any number of
-            their forces from one territory into one other
-            territory. Unless separated by Storm, that player
-            may move groups of forces from different sectors
-            of the same territory.
-          children:
-            - name: One Force Move
-              text: Each player may make only one force move per turn.
-            - name: One Adjacent Territory
-              text: >
-                A player without a force in either _Arrakeen_ or
-                _Carthag_ at the start of their move can only
-                move their forces to one adjacent territory.
-            - name: Ornithopters
-              text: >
-                A player who starts a force move with one or
-                more forces in either _Arrakeen_, _Carthag_,
-                or both has access to Ornithopters and may
-                move forces up to three adjacent territories.
-
-                The forces moved do not have to be in _Arrakeen_
-                or _Carthag_ to make the move.
-            - name: Sectors
-              text: >
-                Sectors have no effect on movement. Forces can
-                move into or through a territory ignoring all
-                sectors.
-            - name: Storm
-              text: >
-                As defined in the `rule:1.1.1.3` Storm Phase
-                section, no force may move into, out of, or
-                through a sector in storm. Many territories
-                occupy several sectors, so that a player 
-                may move into and out of a territory that is
-                partly in the storm, so long as the group does
-                not pass through the part covered by the storm.
-              children:
-                - name: Sectors
-                  text: >
-                    When ending a move in a territory lying in several 
-                    sectors, a player must make clear in which sector of 
-                    the territory they choose to leave their forces.
-                - name: Polar Sink
-                  text: The _Polar Sink_ is never in storm.
-            - name: Occupancy Limit
-              text: >
-                Like shipment, forces cannot be moved into or
-                through a stronghold if forces of two other
-                players are already there.
     - name: Battle Phase
-      text: Players must resolve battles in every territory that is occupied by forces from two or more factions.
-      children:
-        - name: Battle Determination
-        - name: Battle Plan
-        - name: Battle Resolution
-        - name: Traitors
     - name: Spice Collection Phase
-      text: Forces in territories that contain spice may collect the spice.
     - name: Mentat Pause Phase
-      text: Factions either declare a winner (or winners), or take some time to evaluate their positions on the map and then move the Turn Counter to the next position on the Turn Track to begin the next turn.
-      children:
-        - name: Solo Stronghold Victory
-          text: >
-            When one player controls 3 strongholds with at least one of their
-            Forces during the Mentat Pause Phase, that player wins the game.
-        - name: Allied Stronghold Victory
-          text: >
-            When two players in an Alliance separately control a total of at least 4
-            strongholds with one or more Forces during the Mentat Pause Phase,
-            that Alliance wins the game.
-        - name: Multiple Victories
-          text: >
-            When multiple players or alliances achieve a stronghold victory,
-            only the player or alliance first in Storm Order wins.
-        - name: War Continues
-          text: >
-            When there are no winners, players mull over their positions 
-            on the board, consider their options and, when they are 
-            ready, move the turn marker to the next position on the 
-            Turn Track to begin the next turn.
-        - name: Game End
-          text: After the last turn, the game is over and a winner is declared.
-          children:
-            - name: Fremen
-              text: If Spacing Guild are not in the game, the Fremen win.
-            - name: Spacing Guild
-              text: If Spacing Guild is in the game, the Spacing Guild wins.
-            - name: Stronghold Victory
-              text: The players with the most strongholds win.
-    - name: "Nexus"
-      children:
-        - name: Forming an Alliance
-        - name: Breaking an Alliance
-        - name: How an Alliance Functions
 
 - name: Atreides
   colorcode: atreides
   text: You have limited prescience.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 10 forces in _Arrakeen_ and 10 forces in reserves.
-            
-        - name: Spice
-          text: Start with 10 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 10 spice.
+          - name: Forces
+            text: 10 `glossary:force:forces` in _Arrakeen_ and 10 forces in reserves.
         - name: Free Revival
-          text: 2 forces.
+          text: 2 `glossary:force:forces`.
     - name: Advantages
       children:
         - name: Filament Book
@@ -375,13 +105,12 @@
           text: >
             During the bidding round, you may look at each 
             Treachery Card as it comes up for purchase before 
-            any faction bids on it
+            any faction bids on it.
         - name: Wormsign
           karama: true
           text: >
-            During `rule:1.1.6` Shipment and Movement Phase,
-            before anyone ships, you may look at the top
-            card of the Spice Deck.
+            During the Shipment and Movement Phase `rule:shipmovephase`,
+            before anyone ships, you may look at the top card of the Spice Deck.
         - name: Prescience
           karama: true
           text: >
@@ -403,9 +132,7 @@
     - name: Advanced Game Advantages
       children:
         - name: Special Karama Power
-          text: >
-            You may use a Karama Card to look at
-            any one player's entire Battle Plan.
+          text: You may use a Karama Card to look at any one player's entire Battle Plan.
         - name: Kwisatz Haderach
           text: >
             The Kwisatz Haderach starts out inactive and
@@ -428,17 +155,11 @@
                     If the leader or Cheap Hero is killed, the
                     Kwisatz Haderach does not add its +2 strength.
             - name: Atreides Loyalty
-              text: >
-                A leader accompanied by Kwisatz Haderach
-                cannot turn traitor.
+              text: A leader accompanied by Kwisatz Haderach cannot turn traitor.
             - name: Prophecy Blinded
-              text: >
-                The Kwisatz Haderach can only be killed
-                if blown up by a lasgun/shield explosion.
+              text: The Kwisatz Haderach can only be killed if blown up by a lasgun/shield explosion.
             - name: Reawaken
-              text: >
-                When killed, the Kwisatz Haderach token
-                must be revived like any other leader.
+              text: When killed, the Kwisatz Haderach token must be revived like any other leader.
             - name: Ascension
               text: >
                 Alive or dead, the Kwisatz Haderach
@@ -449,153 +170,36 @@
   colorcode: benegesserit
   text: You are adept in the ways of mind control.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 1 force in _Polar Sink_ and 19 forces in reserves.
-            
-        - name: Spice
-          text: Start with 5 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 5 spice.
+          - name: Forces
+            text: 1 `glossary:force` in _Polar Sink_ and 19 forces in reserves.
+            children:
+              - name: Advanced
+                text: In Advanced, 1 **Advisor** in any `glossary:territory` on the `glossary:map`.
         - name: Free Revival
-          text: 1 force.
+          text: 1 `glossary:force`.
     - name: Advantages
-      children:
-        - name: Prediction
-          text: >
-            After `rule:0.1.3` Positions, secretly predict
-            when a faction will win, placing a turn number card
-            and a faction card face down behind your Player Shield.
-
-            If the faction you predicted wins (alone or as an ally,
-            even your ally) in the turn you predicted, reveal your
-            prediction and win alone.
-          children:
-            - name: Special Victory
-              text: >
-                You cannot predict the Spacing Guild or Fremen
-                will win with their Special Victory conditions.
-        - name: Spiritual Advisors
-          karama: true
-          text: >
-            Whenever any other faction ships forces onto Dune
-            from off-planet, you may ship 1 force for free
-            from your reserves into the _Polar Sink_.
-        - name: Voice
-          karama: true
-          text: >
-            You may command your opponent to play or not
-            play one of the following cards in their Battle Plan:
-
-            * poison weapon
-
-            * projectile weapon
-
-            * poison defense
-
-            * projectile defense
-
-            * a worthless card
-
-            * a Cheap Hero
-
-            * a specific special weapon by name
-
-            * or a specific special defense by name.
-
-
-            Your opponent must comply with your command as well as they are able to.
     - name: Alliance
-      children:
-        - name: Voice
-          karama: true
-          text: You may Voice your ally's opponent in battle.
     - name: Advanced Advantages
-      text: >
-        Your forces have two sides, the spiritual, striped side (advisor),
-        and the battle side with no stripes (fighter). Fighters are normal forces.
-      children:
-        - name: Charity
-          karama: true
-          text: >
-            You always receive CHOAM charity of 2 spice,
-            regardless of how much spice you already have.
-        - name: Karama
-          karama: true
-          text: >
-            You may use any worthless card as if it was a Karama card.
-        - name: Advisors
-          text: >
-            Advisors coexist peacefully with other faction
-            forces in the same territory. Advisors have no
-            effect on the play of the other factions whatsoever
-            and cannot collect spice, be involved in combat,
-            prevent another faction's control of a stronghold,
-            prevent another faction from challenging a
-            stronghold (Occupancy Limit), use ornithopters,
-            or play Family Atomics. Advisors are still susceptible
-            to storms, sandworms, lasgun/shield explosions,
-            and Family Atomics.
-        - name: Spiritual Advisors
-          karama: true
-          text: >
-            Whenever any other faction ships forces to 
-            Dune from off-planet, you may ship
-            one advisor for free from your reserves into
-            that same territory (instead of the _Polar
-            Sink_). You may only do this when you do not
-            have fighters already present in that territory.
-        - name: Fighters
-          text: >
-            When you use your normal Shipment action,
-            forces must be shipped as fighters.
-          children:
-            - name: Take Up Arms
-              karama: true
-              text: >
-                When you move advisors into an occupied territory,
-                they may remain as advisors or flip to fighters.
-            - name: Battle Stance
-              text: >
-                When advisors are ever alone in a territory before
-                `rule:1.1.7` Battle Phase, they automatically flip to fighters.
-            - name: Unison
-              text: >
-                When you move advisors or fighters into a territory
-                where you have the opposite type, they flip to match
-                the type already in the territory.
-            - name: Ally
-              text: Advisors cannot flip to fighters with an ally present.
-            - name: Storm
-              text: Advisors cannot flip to fighters under storm.
-        - name: Intrusion
-          karama: true
-          text: >
-            When another faction ships or moves into 
-            a territory where you have fighters,
-            you may flip them to advisors.
-        - name: Battle
-          karama: true
-          text: >
-            During `rule:1.1.6` Shipment and Movement Phase,
-            before anyone ships, in each territory that
-            you have advisors, you may flip all of those
-            advisors to fighters.
 
 - name: Emperor
   colorcode: emperor
-  text: You have access to great wealth.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 20 forces in reserves.
-            
-        - name: Spice
-          text: Start with 10 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 10 spice.
+          - name: Forces
+            text: 20 `glossary:force:forces` in reserves.
         - name: Free Revival
-          text: 1 force.
+          text: 1 `glossary:force`.
     - name: Advantages
       children:
         - name: Bidding
@@ -603,6 +207,9 @@
           text: >
             Whenever any other faction pays spice for a Treachery
             Card, they pay it to you instead of the Spice Bank.
+          children:
+            - name: Fair Market
+              text: You may not discount the price of Treachery Cards; the full price must be paid.
     - name: Alliance
       children:
         - name: Spice Trade
@@ -629,21 +236,20 @@
 
 - name: Fremen
   colorcode: fremen
-  text: You are native to Dune and know its ways.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: >
-            10 forces distributed as you like on _Sietch Tabr_,
-            _False Wall South_, and _False Wall West_;
-            and 10 forces in reserves (on the far side of Dune).
-            
-        - name: Spice
-          text: Start with 3 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 3 spice.
+          - name: Forces
+            text: >
+              10 forces distributed as you like on _Sietch Tabr_,
+              _False Wall South_, and _False Wall West_;
+              and 10 forces in reserves (on the far side of Dune).
         - name: Free Revival
-          text: 3 forces.
+          text: 3 `glossary:force:forces`.
     - name: Advantages
       children:
         - name: Shipment
@@ -675,6 +281,7 @@
                     have forces in the original territory,
                     you may do this again.
         - name: Fremen Special Victory Condition
+          id: fsvc
           text: >
             If no faction has won by the end of the
             last turn, your plans to alter Dune have
@@ -696,7 +303,7 @@
         - name: Fremen Special Victory Condition
           text: >
             Your ally wins with you when you win with the
-            `rule:2.4.2.4` Fremen Special Victory Condition.
+            `rule:fsvc` Fremen Special Victory Condition.
     - name: Advanced Advantages
       children:
         - name: Special Karama Power
@@ -748,138 +355,253 @@
 
 - name: Harkonnen
   colorcode: harkonnen
-  text: You excel in treachery.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 10 forces in _Carthag_ and 10 forces in reserves.
-            
-        - name: Spice
-          text: Start with 10 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 10 spice.
+          - name: Forces
+            text: 10 `glossary:force:forces` in _Carthag_ and 10 forces in reserves.
         - name: Free Revival
-          text: 2 forces.
+          text: 2 `glossary:force:forces`.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Advantages
 
 - name: Spacing Guild
   colorcode: guild
-  text: You control all shipment onto and off Dune.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 5 forces in _Tuek's Sietch_ and 15 forces in reserves.
-            
-        - name: Spice
-          text: Start with 5 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 10 spice.
+          - name: Forces
+            text: 5 `glossary:force:forces` in _Tuek's Sietch_ and 15 forces in reserves.
         - name: Free Revival
-          text: 1 force.
+          text: 1 `glossary:force`.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Advantages
 
-- name: Ixian
+- name: Ixians
   colorcode: ixian
-  text: You are skilled in technology and production.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 6 forces (3 Cyborgs and 3 Suboids) in the Hidden Mobile Stronghold, and 14 forces in reserves.
-            
-        - name: Spice
-          text: Start with 10 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 10 spice.
+          - name: Forces
+            text: >
+              6 `glossary:force:forces` (3 Cyborgs and 3 Suboids)
+              in the Hidden Mobile Stronghold and 14 forces in reserves.
         - name: Free Revival
-          text: 1 force.
+          text: 1 `glossary:force`.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Advantages
 
 - name: Tleilaxu
   colorcode: tleilaxu
-  text: You have superior genetic engineering technology.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 20 forces in reserves.
-            
-        - name: Spice
-          text: Start with 5 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 5 spice.
+          - name: Forces
+            text: 20 `glossary:force:forces` in reserves.
         - name: Free Revival
-          text: 2 forces.
+          text: 2 `glossary:force:forces`.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Advantages
 
 - name: CHOAM
   colorcode: choam
-  text: You can manipulate the economy.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 20 forces in reserves.
-            
-        - name: Spice
-          text: Start with 2 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 2 spice.
+          - name: Forces
+            text: 20 `glossary:force:forces` in reserves.
         - name: Free Revival
-          text: 0 forces.
+          text: 0 `glossary:force:forces`.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Advantages
 
 - name: Richese
   colorcode: richese
-  text: You have alternative technology.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 20 forces in reserves.
-            
-        - name: Spice
-          text: Start with 5 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 5 spice.
+          - name: Forces
+            text: 20 `glossary:force:forces` in reserves.
         - name: Free Revival
-          text: 2 forces.
+          text: 2 `glossary:force:forces`.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Advantages
 
 - name: Ecaz
   colorcode: ecaz
-  text: You forge strong alliances.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 6 forces in _Imperial Basin_ and 14 forces in reserves.
-            
-        - name: Spice
-          text: Start with 2 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 12 spice.
+          - name: Forces
+            text: 6 `glossary:force:forces` in _Imperial Basin_ and 14 forces in reserves.
         - name: Free Revival
-          text: 2 forces.
+          text: 2 `glossary:force:forces`.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Advantages
 
 - name: Moritani
   colorcode: moritani
-  text: You resort to terrorism.
   children:
-    - name: Setup
+    - name: Faction Rules
       children:
-        - name: Forces 
-          text: 6 forces in any unoccupied territory and 14 forces in reserves.
-            
-        - name: Spice
-          text: Start with 12 spice.
-        
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 12 spice.
+          - name: Forces
+            text: 6 `glossary:force:forces` in any unoccupied territory and 14 forces in reserves.
         - name: Free Revival
-          text: 2 forces.
+          text: 2 `glossary:force:forces`.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Advantages
 
 - name: Treachery Cards
   colorcode: rules
   children:
     - name: Treachery Card List
-    - name: First Expansion - Ixians & Tleilaxu
-    - name: Second Expansion - CHOAM & Richese
-    - name: Third Expansion - Ecaz & Moritani
+      children:
+        - name: Baliset
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
+        - name: Chaumas
+          text: >
+            Poison Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Poison Defense.
+            You may keep this card if you win this battle.
+        - name: Chaumurky
+          text: >
+            Poison Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Poison Defense.
+            You may keep this card if you win this battle.
+        - name: Cheap Hero
+        - name: Crysknife
+          text: >
+            Projectile Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Projectile Defense.
+            You may keep this card if you win this battle.
+        - name: Ellaca Drug
+          text: >
+            Poison Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Poison Defense.
+            You may keep this card if you win this battle.
+        - name: Family Atomics
+        - name: Gom Jabbar
+          text: >
+            Poison Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Poison Defense.
+            You may keep this card if you win this battle.
+        - name: Hajr
+        - name: Jubba Cloak
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
+        - name: Karama
+        - name: Kulon
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
+        - name: La, La, La
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
+        - name: Lasgun
+        - name: Maula Pistol
+          text: >
+            Projectile Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Projectile Defense.
+            You may keep this card if you win this battle.
+        - name: Shield
+        - name: Slip Tip
+          text: >
+            Projectile Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Projectile Defense.
+            You may keep this card if you win this battle.
+        - name: Snooper
+        - name: Stunner
+          text: >
+            Projectile Weapon.
+            Play as part of your Battle Plan.
+            Kills opponent's leader before battle is resolved.
+            Opponent may protect their leader with a Projectile Defense.
+            You may keep this card if you win this battle.
+        - name: Tleilaxu Ghola
+        - name: Trip to Gamont
+          text: >
+            Worthless Card.
+            Play as part of your Battle Plan in place of a weapon, defense, or both.
+            This card has no value in play.
+            You can discard it only by playing it in your Battle Plan.
+        - name: Truthtrance
+        - name: Weather Control
+    - name: Expansion 1 - Ixians & Tleilaxu
+    - name: Expansion 2 - CHOAM & Richese
+    - name: Expansion 3 - Ecaz & Moritani
 
 - name: Variants
   colorcode: rules
   children:
-    - name: Tournament Rules
     - name: Shield Wall Stronghold
     - name: Nexus Cards
+    - name: Advanced Stronghold Cards
     - name: Tech Tokens
     - name: Discovery Tokens
     - name: Leader Skill Cards
@@ -899,11 +621,11 @@
         - name: Emperor
           text: You may use a Karama Card to revive up to three of your Forces or one of your leaders for free.
         - name: Fremen
-          text: You may use a Karama Card to place your sandworm token in any sand territory that you wish. This is treated as a normal sandworm
+          text: You may use a Karama Card to place your sandworm token in any sand territory that you wish. This is treated as a normal sandworm.
         - name: Harkonnen
           text: You may use a Karama Card to take without looking any number of cards, up to the entire hand of any one player of your choice. For each card you take, you must give that player one of your cards in return.
         - name: Spacing Guild
-          text: You may use a Karama Card to stop one off-planet shipment of any one player
+          text: You may use a Karama Card to stop one off-planet shipment of any one player.
         - name: Ixians
           text: You may move the Hidden Mobile Stronghold 2 territories on your turn during Shipment and Movement, as well as make your normal movement.
         - name: Tleilaxu
@@ -913,12 +635,23 @@
         - name: Richese
           text: You may pay 3 spice at any time to buy one of your Richese Treachery Cards, secretly choosing which one.
         - name: Ecaz
-          text: If you played neither a weapon nor a defense, you may add the difference between your leader disc and your opponent's leader disc to your number dialed
+          text: If you played neither a weapon nor a defense, you may add the difference between your leader disc and your opponent's leader disc to your number dialed.
         - name: Moritani
-          text: If you lose a battle, force your opponent to discard or keep any or all Treachery Cards they played
+          text: If you lose a battle, force your opponent to discard or keep any or all Treachery Cards they played.
     - name: Glossary
       children:
-        - name: Active Leader
+        - name: Force
+          id: force
           text: >
-            Leaders that are under your control (in your leader pool).
-            Leaders in the tanks are not active leaders for any faction.
+            One of a player's twenty tokens indicated by an image of a soldier,
+            that is used for Occupancy, Battles, Control, and Spice Collection.
+        - name: Move
+          id: move
+        - name: Place
+          id: place
+        - name: Put
+          id: put
+        - name: Send
+          id: send
+        - name: Ship
+          id: ship

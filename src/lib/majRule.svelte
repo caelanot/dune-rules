@@ -22,13 +22,15 @@
 </div>
 
 <style lang="scss">
-  .rule-containor {
-    border-left-width: 10px;
-    border-left-style: solid;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    padding: 5px 20px;
-    margin: 20px 5px;
+  @media not print {
+    .rule-containor {
+      border-left-width: 10px;
+      border-left-style: solid;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      padding: 5px 20px;
+      margin: 20px 5px;
+    }
   }
 
   .index {
