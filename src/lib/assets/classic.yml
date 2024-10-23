@@ -1,5 +1,5 @@
 - name: Golden Rules
-  colorcode: rules
+  colorcode: fremen
   children:
     - name: Rules Conflicts
       children:
