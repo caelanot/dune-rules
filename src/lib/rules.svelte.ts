@@ -53,7 +53,7 @@ export class RulesService {
                 if (!this.indexRuleHash[subtype]) return `<span class="error"> Not found: ${subtype}</span>`
 
                 if (type === "rule") {
-                    return `(<a href=#${this.indexRuleHash[subtype]} class="rule-link">${extra||""}${this.indexRuleHash[subtype].split('-')[0]}</a>)`
+                    return `[<a href=#${this.indexRuleHash[subtype]} class="rule-link">${extra||""}${this.indexRuleHash[subtype].split('-')[0]}</a>]`
                 }
 
                 if (type === "glossary") {

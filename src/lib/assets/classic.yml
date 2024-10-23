@@ -17,10 +17,12 @@
           text: >
             The amount of Treachery Cards that any player holds can be kept secret
             at any time other than the Bidding Phase.
-        - name: Discard
+        - name: Spice Discard
+          text: >
+            The Spice Card discard pile is public and can be searched.
+        - name: Treachery Discard
           text: The Treachery Card discard pile is not public and cannot be searched.
     - name: Bribes and Deals
-
 
 - name: Game Setup
   colorcode: rules
@@ -84,7 +86,6 @@
             simultaneously revealed and totaled, and the Storm Marker moved from the Storm Start Sector 
             _counterclockwise_ around the map the sum total of sectors.
 
-
 - name: Sequence of Play
   colorcode: rules
   children:
@@ -132,7 +133,7 @@
         - name: Bidding
           karama: true
           text: >
-            During the bidding round, you may look at each 
+            During the bidding phase `rule:biddingphase`, you may look at each 
             Treachery Card as it comes up for purchase before 
             any faction bids on it.
         - name: Wormsign
@@ -144,8 +145,8 @@
           id: battleprescience
           karama: true
           text: >
-            During the Battle Phase, you may force your 
-            opponent to reveal your choice of one of the four 
+            During the Battle Phase `rule:battlewheels`, you may force your 
+            opponent to `glossary:reveal` your choice of one of the four 
             elements they will use in their Battle Plan against you:
             the leader, the weapon, the defense, or the number 
             dialed. If you choose to ask about a weapon or defense 
@@ -160,8 +161,6 @@
             You may use ability **Prescience** `rule:battleprescience` in your ally's battle.
     - name: Advanced Game Advantages
       children:
-        - name: Special Karama Power
-          text: You may use a Karama Card to look at any one player's entire Battle Plan.
         - name: Kwisatz Haderach
           text: >
             The Kwisatz Haderach starts out inactive and
@@ -172,19 +171,19 @@
             the Kwisatz Haderach token becomes active for
             the rest of the game.
           children:
-            - name: Kwisatz Haderach
+            - name: Kwisatz Strength
               karama: true
               text: >
                 In your battle, you may add the Kwisatz
-                Haderach token to your leader or Cheap Hero's
+                Haderach token's strength (+2) to your leader or Cheap Hero's
                 strength in one territory per turn.
               children:
+                - name: Atreides Loyalty
+                  text: A leader accompanied by Kwisatz Haderach cannot turn traitor.
                 - name: Unprotected
                   text: >
                     If the leader or Cheap Hero is killed, the
                     Kwisatz Haderach does not add its +2 strength.
-            - name: Atreides Loyalty
-              text: A leader accompanied by Kwisatz Haderach cannot turn traitor.
             - name: Prophecy Blinded
               text: The Kwisatz Haderach can only be killed if blown up by a lasgun/shield explosion.
             - name: Reawaken
@@ -194,6 +193,8 @@
                 Alive or dead, the Kwisatz Haderach
                 does not prevent the Atreides from reviving
                 other leaders.
+        - name: Special Karama Power
+          text: You may use a Karama Card to look at any one player's entire Battle Plan.
 
 - name: Bene Gesserit
   colorcode: benegesserit
@@ -210,6 +211,7 @@
             children:
               - name: Advanced
                 text: In Advanced, 1 **Advisor** in any `glossary:territory` on the `glossary:map`.
+          - name: Prediction
         - name: Free Revival
           text: 1 `glossary:force`.
     - name: Advantages
@@ -234,8 +236,8 @@
         - name: Bidding
           karama: true
           text: >
-            Whenever any other faction pays spice for a Treachery
-            Card, they pay it to you instead of the Spice Bank.
+            Whenever any other faction `glossary:buy:buys` a Treachery
+            Card, they pay the spice to you instead of the Spice Bank.
           children:
             - name: Fair Market
               text: You may not discount the price of Treachery Cards; the full price must be paid.
@@ -247,21 +249,23 @@
           karama: true
           text: >
             You may pay spice for the revival of up to
-            3 extra of your ally's forces beyond their
+            3 extra of your ally's `glossary:force:forces` beyond their
             current limit from the Tleilaxu Tanks.
     - name: Advanced Advantages
       children:
         - name: Sardaukar
-          text: Your five starred forces, Sardaukar, have a special fighting capability.
+          text: Your five starred `glossary:force:forces`, Sardaukar, have a special fighting capability.
           children:
-            - name: Sardaukar Strength
+            - name: Strength
               karama: true
-              text: Sardaukar forces are worth two normal forces in battle.
+              text: Sardaukar `glossary:force:forces` are worth two normal forces in battle.
               children:
-                - name: Sardaukar Weakness
-                  text: Sardaukar forces are worth just one force against Fremen forces.
-            - name: Sardaukar Revival
-              text: Only one Sardaukar force can be revived per turn. 
+                - name: Weakness
+                  text: Sardaukar `glossary:force:forces` are worth just one force against Fremen forces.
+            - name: Revival
+              text: Only one Sardaukar `glossary:force` can be revived per turn.
+        - name: Special karama Power
+          text: You may use a Karama Card to revive up to three of your Forces or one of your leaders for free.
 
 - name: Fremen
   colorcode: fremen
@@ -332,15 +336,9 @@
         - name: Fremen Special Victory Condition
           text: >
             Your ally wins with you when you win with the
-            `rule:fsvc` Fremen Special Victory Condition.
+            Fremen Special Victory Condition `rule:fsvc`.
     - name: Advanced Advantages
       children:
-        - name: Special Karama Power
-          text: >
-            During the `rule:1.1.2` Spice Blow Phase, use
-            a Karama Card to place a sandworm in any
-            sand territory that you wish. This is treated
-            as a normal sandworm and causes a Nexus.
         - name: Storm Rule
           children:
             - name: Storm
@@ -381,6 +379,12 @@
         - name: Battles
           karama: true
           text: Your forces do not require spice to count at their full strength.
+        - name: Special Karama Power
+          text: >
+            During the Spice Blow Phase `rule:spicephase`, use
+            a Karama Card to place a sandworm in any
+            sand territory that you wish. This is treated
+            as a normal sandworm and causes a Nexus.
 
 - name: Harkonnen
   colorcode: harkonnen
@@ -393,11 +397,36 @@
             text: Start with 10 spice.
           - name: Forces
             text: 10 `glossary:force:forces` in _Carthag_ and 10 forces in reserves.
+          - name: Extra Treachery Card
+            text: Draw a Treachery Card.
         - name: Free Revival
           text: 2 `glossary:force:forces`.
+        - name: Hand Limit
+          text: Your hand limit is 8 Treachery Cards.
     - name: Advantages
+      children:
+        - name: Traitors
+          text: You can use all 4 of your Traitors normally.
+        - name: Bidding
+          karama: true
+          text: >
+            When you `glossary:buy` a card, you `glossary:draw` an extra card for
+            free from the Treachery Deck.
     - name: Alliance
+      children:
+        - name: Traitors
+          karama: true
+          text: You may use your Traitors in your ally's battle.
     - name: Advanced Advantages
+      children:
+        - name: Capture Leaders
+          karama: true
+          text: After you win a battle, randomly select 1 Active Leader from the loser. Then
+          children:
+            - name: Kill
+              text: Place the Leader face down in the Tleilaxu Tanks to gain 2 spice from the Spice Bank.
+            - name: Keep Hostage
+              text: Add the leader to your Active Leaders.
 
 - name: Spacing Guild
   colorcode: guild
@@ -465,6 +494,8 @@
             text: 20 `glossary:force:forces` in reserves.
         - name: Free Revival
           text: 0 `glossary:force:forces`.
+        - name: Hand Limit
+          text: Your hand limit is 5 Treachery Cards.
     - name: Advantages
     - name: Alliance
     - name: Advanced Advantages
@@ -674,6 +705,7 @@
           text: The player earlier in `glossary:stormorder:storm order`.
         - name: Bribe
         - name: Buy
+          id: buy
         - name: Control
           id: control
           text: >
@@ -681,6 +713,8 @@
             Mentat Pause Phase with no other faction's forces occupying that 
             same territory.
         - name: Deal
+        - name: Draw
+          id: draw
         - name: Enter
         - name: First Player
         - name: Force
@@ -702,6 +736,8 @@
           id: place
         - name: Put
           id: put
+        - name: Reveal
+          id: reveal
         - name: Sector
           id: sector
         - name: Send
