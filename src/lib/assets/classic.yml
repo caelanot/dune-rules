@@ -214,12 +214,14 @@
           - name: Prediction
             text: >
               Secretly predict when a faction will win via Stronghold Victory by
-              placing a turn number card and a faction card from 
+              placing a turn number card and a faction card from your prediction deck
+              face down behind your shield.
         - name: Free Revival
           text: 1 `glossary:force`.
     - name: Advantages
       children:
         - name: Spiritual Advisors
+          id: bg_sink_advise
           karama: true
           text: >
             Whenever any other faction `glossary:ship:ships` `glossary:force:forces`
@@ -230,25 +232,9 @@
           karama: true
           text: >
             You may command your opponent to play or not play one of the following
-            cards in their Battle Plan: 
-            
-            * poison weapon, 
-            
-            * projectile weapon,
-            
-            * poison defense,
-            
-            * projectile defense,
-            
-            * a worthless card,
-            
-            * a Cheap Hero,
-            
-            * a specific special weapon by name,
-            
-            * or a specific special defense by name
-            
-            
+            cards in their Battle Plan: poison weapon, projectile weapon,
+            poison defense, projectile defense, a worthless card, a Cheap Hero,
+            a specific special weapon by name, or a specific special defense by name.
             Your opponent must comply with your command as well as they are able to.
     - name: Alliance
       children:
@@ -266,6 +252,72 @@
           karama: true
           text: >
             You may use any Worthless Card as if it were a Karama Card.
+        - name: Fighters & Advisors
+          text: >
+            Your `glossary:force` tokens have two sides, the spiritual, striped side (**Advisor**)
+            and the battle side with no stripes (**Fighter**). **Fighters** are normal forces.
+          children:
+            - name: Advisor
+              children:
+                - name: Advise
+                  id: bg_advise_territory
+                  text: >
+                    When using ability **Spiritual Advisors** `rule:bg_sink_advise`, you may
+                    `glossary:send` 1 **Advisor** for free from your reserves
+                    into the same `glossary:territory` and `glossary:sector` that faction
+                    `glossary:ship:shipped` to instead of the _Polar Sink_. You may only do
+                    this when you do not have **Fighters** present in the territory.
+                - name: Coexistence
+                  id: bg_advisor_coexist
+                  text: >
+                    **Advisors** coexist peacefully with other faction `glossary:force:forces`
+                    in the same `glossary:territory`. **Advisors** have no effect on the play
+                    of the other factions whatsoever and cannot: collect spice,
+                    be involved in combat, prevent another faction's `glossary:control`
+                    of a `glossary:stronghold`, prevent another faction from challenging a 
+                    stronghold, use Ornithopters, or play Family Atomics.
+                    **Advisors** are still susceptible to storm, sandworms,
+                    lasgun/shield explosions, and Family Atomics.
+            - name: Fighter
+              children:
+                - name: Ship as Fighters
+                  text: >
+                    Forces must be `glossary:ship:shipped` as **Fighters**.
+                - name: No Advisors
+                  text: You may not `glossary:ship` to a `glossary:territory` with **Advisors**.
+            - name: Move
+              text: >
+                When you `glossary:move` **Advisors** or **Fighters** into a 
+                `glossary:territory` where you have the opposite type, they flip
+                to match the type already in the territory.
+            - name: Enlistment
+              text: >
+                When **Advisors** are ever alone in a `glossary:territory` before
+                the Battle Phase `rule:battlephase`, they automatically flip to **Fighters**.
+            - name: Intrusion
+              karama: true
+              text: >
+                When a `glossary:force` of another faction that you are not allied to
+                `glossary:enters` a `glossary:territory` where you have **Fighters**,
+                you may flip them to **Advisors**.
+            - name: Take Up Arms
+              karama: true
+              text: >
+                When you `glossary:move` **Advisors** into an `glossary:occupy:occupied`
+                `glossary:territory`, you may flip them to **Fighters** if you do not
+                already have **Advisors** present.
+            - name: Battle
+              karama: true
+              text: >
+                Before Shipment and Movement `rule:shipmovephase`, in each `glossary:territory`
+                that you have **Advisors**, you may flip all of those **Advisors** to **Fighters**.
+              children:
+                - name: Allies
+                  text: >
+                    **Advisors** can not flip to **Fighters** with an ally present.
+                - name: Storm
+                  text: >
+                    **Advisors** can not flip to **Fighters** under storm.
 
 - name: Emperor
   colorcode: emperor
@@ -313,7 +365,7 @@
                   text: Sardaukar `glossary:force:forces` are worth just one force against Fremen forces.
             - name: Revival
               text: Only one Sardaukar `glossary:force` can be revived per turn.
-        - name: Special karama Power
+        - name: Special Karama Power
           text: You may use a Karama Card to revive up to three of your Forces or one of your leaders for free.
 
 - name: Fremen
@@ -840,6 +892,7 @@
         - name: Draw
           id: draw
         - name: Enter
+          id: enters
         - name: First Player
         - name: Force
           id: force
@@ -873,6 +926,7 @@
         - name: Storm Order
           id: stormorder
         - name: Stronghold
+          id: stronghold
         - name: Supply
         - name: Territory
           id: territory
