@@ -1,5 +1,5 @@
-@import 'breakpoints.scss';
-@import 'functions.scss';
+@use 'breakpoints.scss';
+@use 'functions.scss';
 
 @mixin padded-container {
 	width: 100%;

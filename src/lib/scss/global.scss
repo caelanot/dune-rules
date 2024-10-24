@@ -1,19 +1,11 @@
-@import '$lib/scss/_reset.scss';
-@import '$lib/scss/_variables.scss';
-@import '$lib/scss/_themes.scss';
-@import '$lib/scss/_breakpoints.scss';
-@import '$lib/scss/_functions.scss';
-@import '$lib/scss/_mixins.scss';
-// @import '$lib/scss/_base.scss';
-// @import '$lib/scss/_typography.scss';
-// @import '$lib/scss/_markdown.scss';
-// @import '$lib/scss/_code-highlights.scss';
-// @import '$lib/scss/animations.scss';
+@use '$lib/scss/_reset.scss';
+@use '$lib/scss/_variables.scss';
+@use '$lib/scss/_themes.scss';
+@use '$lib/scss/_breakpoints.scss';
+@use '$lib/scss/_functions.scss';
+@use '$lib/scss/_mixins.scss';
 
-@import '@fontsource/merriweather';
-// @import '@fontsource/merriweather/900.css';
-// @import '@fontsource/ubuntu-mono';
-// @import '@fontsource/libre-baskerville';
+@use '@fontsource/merriweather';
 
 body {
 	--body-background-color: var(--color--page-background);
@@ -81,7 +73,7 @@ a:not(.rule-link) {
     }
 
     &.karama {
-        color: var(--color--secondary);
+        color: var(--color--karama);
     }
 
     &.name {

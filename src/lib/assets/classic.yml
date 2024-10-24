@@ -1,5 +1,5 @@
 - name: Golden Rules
-  colorcode: fremen
+  colorcode: rules
   children:
     - name: Rules Conflicts
       children:
@@ -158,7 +158,7 @@
         - name: Prescience
           karama: true
           text: >
-            You may use ability **Prescience** `rule:battleprescience` in your ally's battle.
+            You may use ability **Prescience** `rule:battleprescience` in your ally's battles.
     - name: Advanced Game Advantages
       children:
         - name: Kwisatz Haderach
@@ -212,11 +212,60 @@
               - name: Advanced
                 text: In Advanced, 1 **Advisor** in any `glossary:territory` on the `glossary:map`.
           - name: Prediction
+            text: >
+              Secretly predict when a faction will win via Stronghold Victory by
+              placing a turn number card and a faction card from 
         - name: Free Revival
           text: 1 `glossary:force`.
     - name: Advantages
+      children:
+        - name: Spiritual Advisors
+          karama: true
+          text: >
+            Whenever any other faction `glossary:ship:ships` `glossary:force:forces`
+            onto Dune from off-planet, you may `glossary:send` one force from your
+            reserves to the _Polar Sink_.
+        - name: Voice
+          id: voice
+          karama: true
+          text: >
+            You may command your opponent to play or not play one of the following
+            cards in their Battle Plan: 
+            
+            * poison weapon, 
+            
+            * projectile weapon,
+            
+            * poison defense,
+            
+            * projectile defense,
+            
+            * a worthless card,
+            
+            * a Cheap Hero,
+            
+            * a specific special weapon by name,
+            
+            * or a specific special defense by name
+            
+            
+            Your opponent must comply with your command as well as they are able to.
     - name: Alliance
+      children:
+        - name: Voice
+          karama: true
+          text: You may use ability **Voice** `rule:voice` in your ally's battles.
     - name: Advanced Advantages
+      children:
+        - name: Charity
+          karama: true
+          text: >
+            You always receive CHOAM Charity of 2 spice
+            regardless of how much spice you already have.
+        - name: Karama
+          karama: true
+          text: >
+            You may use any Worthless Card as if it were a Karama Card.
 
 - name: Emperor
   colorcode: emperor
@@ -416,17 +465,35 @@
       children:
         - name: Traitors
           karama: true
-          text: You may use your Traitors in your ally's battle.
+          text: You may use your Traitors in your ally's battles.
     - name: Advanced Advantages
       children:
-        - name: Capture Leaders
-          karama: true
-          text: After you win a battle, randomly select 1 Active Leader from the loser. Then
+        - name: Captured Leaders
+          text: You keep other leaders hostage.
           children:
-            - name: Kill
-              text: Place the Leader face down in the Tleilaxu Tanks to gain 2 spice from the Spice Bank.
-            - name: Keep Hostage
-              text: Add the leader to your Active Leaders.
+            - name: Capture
+              karama: true
+              text: After you win a battle, randomly select 1 Active Leader from the loser. Then
+              children:
+              - name: Kill
+                text: Place the Leader face down in the Tleilaxu Tanks to gain 2 spice from the Spice Bank.
+              - name: Keep Hostage
+                text: Add the leader to your Active Leaders.
+            - name: Prison Break
+              text: >
+                When all your own leaders have been killed, you must return
+                all captured leaders immediately to the players who last had
+                them as an Active Leader.
+            - name: Tying Up Loose Ends
+              text: >
+                Killed captured leaders are `glossary:place:placed` in the Tleilaxu Tanks
+                from which their factions can revive them (subject to the revival rules).
+            - name: No Loyalty
+              text: >
+                A captured leader used in battle may be
+                called traitor with the matching Traitor Card.
+        - name: Special Karama Power
+          text: You may use a Karama Card to take without looking any number of cards, up to the entire hand of any one player of your choice. For each card you take, you must give that player one of your cards in return.
 
 - name: Spacing Guild
   colorcode: guild
@@ -442,8 +509,65 @@
         - name: Free Revival
           text: 1 `glossary:force`.
     - name: Advantages
+      children:
+        - name: Payment for Shipment
+          karama: true
+          text: >
+            When another faction `glossary:ship:ships` `glossary:force:forces` onto Dune,
+            they pay the spice to you instead of to the Spice Bank.
+        - name: Three Types of Shipment
+          karama: true
+          text: You are capable of making one of three types of shipments each turn.
+          children:
+            - name: Normal Shipment
+              text: You may `glossary:ship` normally from off-planet reserves to Dune.
+            - name: Cross-Planet Shipment
+              text: >
+                You may `glossary:ship` any number of `glossary:force:forces` from
+                one `glossary:territory` to another territory.
+            - name: Off-Planet Shipment
+              text: >
+                You may `glossary:ship` any number of `glossary:force:forces`
+                from one `glossary:territory` to your reserves.
+        - name: Half Price
+          karama: true
+          text: >
+            You pay only half the normal price (rounded up) when
+            `glossary:ship:shipping` your `glossary:force:forces`.
+        - name: Spacing Guild Special Victory Condition
+          id: sgsvc
+          text: >
+            If no faction has been able to win the game by the end of play, you
+            have prevented control of Dune and automatically win the game.
     - name: Alliance
+      children:
+        - name: Half Price
+          karama: true
+          text: Your ally may `glossary:ship` `glossary:force:forces` at half the normal price.
+        - name: Cross-Planet Shipment
+          karama: true
+          text: >
+            Your ally may `glossary:ship` any number of `glossary:force:forces`
+            from one `glossary:territory` to another territory.
+        - name: Spacing Guild Special Victory Condition
+          text: >
+            Your ally wins with you when you win with the Spacing
+            Guild Special Victory Condition `rule:sgsvc`.
     - name: Advanced Advantages
+      children:
+        - name: Ship and Move When You Wish
+          text: You may take your shipment and movement action before or after any other faction.
+          karama: true
+          children:
+            - name: Ahead of Schedule
+              text: >
+                You may take your shipment and movement action before and player in front of you.
+            - name: Holding Pattern
+              text: >
+                When you are next in `glossary:stormorder:storm order`, you may announce "Delay".
+                You may take your shipment and movement action after any player behind you.
+        - name: Special Karama Power
+          text: You may use a Karama Card to stop one off-planet shipment of any one player.
 
 - name: Ixians
   colorcode: ixian
