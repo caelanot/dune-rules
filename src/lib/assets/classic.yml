@@ -79,6 +79,7 @@
         - name: Turn Marker
           text: Place the turn marker at 1 on the Turn Track.
         - name: First Storm
+          id: first_storm
           text: >
             The Storm Marker is placed at a random location along the map edge using the following
             procedure - the two players whose Player Markers are nearest on either side of the Storm
@@ -215,7 +216,10 @@
             text: >
               Secretly predict when a faction will win via Stronghold Victory by
               placing a turn number card and a faction card from your prediction deck
-              face down behind your shield.
+              face down behind your shield. If the faction you predicted wins (alone
+              or as an ally, even your ally) in the turn you predicted, `glossary:reveal`
+              your prediction and win alone. You cannot predict that the Spacing Guild or
+              Fremen will win with their special victory conditions.
         - name: Free Revival
           text: 1 `glossary:force`.
     - name: Advantages
@@ -400,7 +404,7 @@
             - name: Devour
               karama: true
               text: If Shai-Hulud appears in a territory where you have forces, they are not devoured.
-            - name: Ride the Worm
+            - name: Beast of Burden
               karama: true
               text: >
                 Upon conclusion of the Nexus, you may ride the sandworm 
@@ -632,13 +636,34 @@
             text: Start with 10 spice.
           - name: Forces
             text: >
-              6 `glossary:force:forces` (3 Cyborgs and 3 Suboids)
+              6 `glossary:force:forces` (3 **Cyborgs** and 3 **Suboids**)
               in the Hidden Mobile Stronghold and 14 forces in reserves.
         - name: Free Revival
           text: 1 `glossary:force`.
+        - name: Starting Treachery Cards
+        - name: HMS Placement
     - name: Advantages
+      children:
+        - name: Bidding
+        - name: Cyborgs & Suboids
+        - name: Hidden Mobile Stronghold
     - name: Alliance
+      children:
+        - name: Technology
+          text: >
+            After your ally `glossary:buy:buys` a Treachery Card, they may look at
+            it and immediately discard it to draw the top card of the Treachery Deck.
     - name: Advanced Advantages
+      children:
+        - name: Technology
+          text: >
+            Once, during the Bidding Phase, before bidding begins on a card and
+            before Atreides looks at the card, you may take the Treachery Card
+            about to be bid on, and replace it with one from your hand.
+        - name: Suboid Strength
+          text: >
+            **Suboids** are always considered half strength for dialing. You cannot
+            increase the effectiveness of **Suboids** in battle by paying spice.
 
 - name: Tleilaxu
   colorcode: tleilaxu
@@ -654,8 +679,29 @@
         - name: Free Revival
           text: 2 `glossary:force:forces`.
     - name: Advantages
+      children:
+        - name: Face Dancers
+        - name: Revival
+          children:
+            - name: Tleilaxu Revival
+            - name: Force Revival
+            - name: Leader Revival
+        - name: Zoal
+          text: >
+            Zoal's value in battle matches the value of the opponent's leader
+            (zero against a Cheap Hero), and for collecting spice for his death.
+          children:
+            - name: Revival Cost
+              text: Zoal always costs 3 spice to revive.
     - name: Alliance
+      children:
+        - name: Half Price Revival
+          children: >
+            You may revive your ally's `glossary:force:forces` and leaders at
+            half price (rounded up).
     - name: Advanced Advantages
+      children:
+        - name: Gholas
 
 - name: CHOAM
   colorcode: choam
