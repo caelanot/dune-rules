@@ -632,12 +632,12 @@
       children:
         - name: At Start
           children:
-          - name: Spice
-            text: Start with 10 spice.
-          - name: Forces
-            text: >
-              6 `glossary:force:forces` (3 **Cyborgs** and 3 **Suboids**)
-              in the Hidden Mobile Stronghold and 14 forces in reserves.
+            - name: Spice
+              text: Start with 10 spice.
+            - name: Forces
+              text: >
+                6 `glossary:force:forces` (3 **Cyborgs** and 3 **Suboids**)
+                in the Hidden Mobile Stronghold and 14 forces in reserves.
         - name: Free Revival
           text: 1 `glossary:force`.
         - name: Starting Treachery Cards
@@ -696,7 +696,7 @@
     - name: Alliance
       children:
         - name: Half Price Revival
-          children: >
+          text: >
             You may revive your ally's `glossary:force:forces` and leaders at
             half price (rounded up).
     - name: Advanced Advantages
