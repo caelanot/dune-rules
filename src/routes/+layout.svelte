@@ -1,5 +1,7 @@
 <script>
-    import '$lib/scss/global.scss';
+  let { children } = $props();
+  import { theme } from "$lib/runes/theme.svelte";
+  import '$lib/scss/global.scss';
 </script>
 
-<slot />
+{@render children()}

@@ -9,12 +9,12 @@
   import Button from '$lib/Button.svelte';
 </script>
 
-<div>
+<!-- <div>
   <RuleButton />
-</div>
+</div> -->
 
 <div>
-  <Button>Dark theme</Button>
+  <Button/>
 </div>
 
 {#each Object.entries(rulesservice.rules) as [_, majorRule]}
