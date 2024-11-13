@@ -359,7 +359,9 @@
     - name: Advanced Advantages
       children:
         - name: Sardaukar
-          text: Your five starred `glossary:force:forces`, Sardaukar, have a special fighting capability.
+          text: >
+            Your five starred `glossary:force:forces`, Sardaukar,
+            have a special fighting capability.
           children:
             - name: Strength
               karama: true
@@ -474,7 +476,9 @@
               karama: true
               text: You may bring your reserves into storm at half loss.
         - name: Fedaykin
-          text: Your three starred forces, Fedaykin, have a special fighting capability.
+          text: >
+            Your three starred `glossary:force:forces`, **Fedaykin**,
+            have a special fighting capability.
           children:
             - name: Fedaykin Strength
               karama: true
@@ -641,23 +645,94 @@
         - name: Free Revival
           text: 1 `glossary:force`.
         - name: Starting Treachery Cards
+          text: >
+            Before Treachery Cards are dealt, draw one card for 
+            each faction in the game. Choose one to keep, shuffle the remaining 
+            cards, and deal one to each of the other players.
         - name: HMS Placement
+          text: >
+            After the first storm movement at the start of the game, place
+            your Hidden Mobile Stronghold by pointing 
+            it at a sector in any non-stronghold territory.
     - name: Advantages
       children:
         - name: Bidding
+          karama: true
+          text: >
+            Before the bidding phase begins, draw one more Treachery Card 
+            than the number up for bid, and look at all of them. Put one card of your 
+            choice face down either on the top or bottom of the deck. Then shuffle the 
+            remaining cards and place them face down for the bidding round.
         - name: Cyborgs & Suboids
+          children:
+            - name: Cyborgs
+              text: >
+                Your seven starred `glossary:force:forces`, **Cyborgs**, have
+                a special fighting capability.
+              children:
+                - name: Strength
+                  karama: true
+                  text: >
+                    **Cyborgs** are worth two normal forces in battle.
+                - name: Revival
+                  text: >
+                    **Cyborgs** cost 3 spice to revive.
+                - name: Movement
+                  karama: true
+                  text: >
+                    **Cyborgs** can move 2 territories instead of 1.
+                - name: Collection
+                  karama: true
+                  text: >
+                    **Cyborgs** can collect 3 spice instead of 2.
+            - name: Suboids
+              text: Your thirteen other `glossary:force:forces`, **Suboids**, are weaker forces.
+              children:
+                - name: Strength
+                  text: >
+                    **Suboids** are worth ½ in battle.
+                - name: Movement
+                  text: >
+                    **Suboids** can move 2 territories when
+                    accompanied by a **Cyborg** force.
+                - name: Absorb losses
+                  text: >
+                    After battle losses are calculated, any of your surviving 
+                    **Suboids** in that Territory can be
+                    exchanged for **Cyborgs** you lost in that battle.
         - name: Hidden Mobile Stronghold
+          text: >
+            This token counts as a `glossary:territory` within the Territory and
+            `glossary:sector` it is pointing to. This Territory is a `glossary:stronghold`.
+          children:
+            - name: Shipping
+              text: >
+                Only you may `glossary:ship` `glossary:force:forces` directly into the
+                Hidden Mobile Stronghold.
+            - name: Movement
+              text: >
+                Subsequently, before the storm is dialed, or revealed, as long as your 
+                forces occupy it, you may move your Hidden Mobile Stronghold up to 
+                3 territories pointing at a sector in any non-stronghold territory.
+            - name: Collection
+              text: >
+                When you move the Hidden Mobile Stronghold from, into, or through
+                a `glossary:territory` whose `glossary:sector` contains spice, 
+                you may immediately collect 2 spice per `glossary:force` in the
+                HMS.
     - name: Alliance
       children:
         - name: Technology
+          karama: true
           text: >
             After your ally `glossary:buy:buys` a Treachery Card, they may look at
             it and immediately discard it to draw the top card of the Treachery Deck.
     - name: Advanced Advantages
       children:
         - name: Technology
+          karama: true
           text: >
-            Once, during the Bidding Phase, before bidding begins on a card and
+            Once per turn, during the Bidding Phase, before bidding begins on a card and
             before Atreides looks at the card, you may take the Treachery Card
             about to be bid on, and replace it with one from your hand.
         - name: Suboid Strength
@@ -678,14 +753,69 @@
             text: 20 `glossary:force:forces` in reserves.
         - name: Free Revival
           text: 2 `glossary:force:forces`.
+        - name: Face Dancers
+          text: >
+            At the start of the game you are not dealt Traitor 
+            Cards. After traitors have been selected and unused Traitor Cards 
+            returned to the deck, you shuffle the deck and take the top 3 cards. 
+            These are your Face Dancers.
     - name: Advantages
       children:
         - name: Face Dancers
+          children:
+            - name: Battle Reveal
+              text: >
+                When another faction wins a battle you may reveal their leader to be a 
+                Face Dancer, and the following occurs:
+              children:
+                - name: Battle Win
+                  text: >
+                    The battle still counts as a win for that player
+                    (they keep or discard treachery cards, Place tokens
+                    and killed leaders in the Tleilaxu Tanks, collect spice
+                    for any leaders killed, and claim any rewards if appropriate).
+                - name: Tanks
+                  text: >
+                    The Face Dancer leader is sent to the tanks if it was not already 
+                    killed, but no spice is collected for it.
+                - name: Replace
+                  text: >
+                    The remaining forces in the territory go back to their reserves and 
+                    are replaced up to the total of those forces with your Tleilaxu forces 
+                    from your reserves and/or from anywhere on the planet.
+            - name: Resupply
+              text: >
+                Once revealed you do not replace a Face Dancer (Traitor Card) until 
+                you have revealed all 3. When that happens, place all 3 cards in the 
+                Traitor deck, shuffle, and draw 3 new Face Dancers.
+            - name: Replacement
+              karama: true
+              text: >
+                During the Mentat Pause Phase, if there is an unrevealed Face Dancer you 
+                wish to replace, you may discard that Face Dancer (Traitor Card). 
+                Shuffle it into the Traitor Deck and draw a new Face Dancer.
         - name: Revival
           children:
-            - name: Tleilaxu Revival
+            - name: Unlimited Revival
+              karama: true
+              text: You have no revival limits.
+            - name: Half Price Revival
+              karama: true
+              text: You pay only half the normal cost (rounded up).
+            - name: Payment For Revival
+              karama: true
+              text: Other factions make revival payments to you.
             - name: Force Revival
+              karama: true
+              text: You may increase the 3 force revival limit for any other faction to 5.
             - name: Leader Revival
+              karama: true
+              text: >
+                Upon request by a faction for a particular one of its 
+                leaders in the tanks, you can set a price and, if met, revive that leader 
+                (whether it is face up or face down). You may do this, however, only 
+                when fewer than five of that faction's leaders are in the tanks. When 
+                all five are there, normal revival rules apply.
         - name: Zoal
           text: >
             Zoal's value in battle matches the value of the opponent's leader
@@ -696,12 +826,18 @@
     - name: Alliance
       children:
         - name: Half Price Revival
+          karama: true
           text: >
             You may revive your ally's `glossary:force:forces` and leaders at
             half price (rounded up).
     - name: Advanced Advantages
       children:
         - name: Gholas
+          karama: true
+          text: >
+            When you have fewer than five leaders alive, you may revive 
+            dead leaders of other factions at your discounted rate, and add them to 
+            your leader pool up to a limit of 5 total active leaders for your faction.
 
 - name: CHOAM
   colorcode: choam

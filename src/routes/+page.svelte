@@ -13,6 +13,10 @@
   <RuleButton />
 </div>
 
+<div>
+  <Button>Dark theme</Button>
+</div>
+
 {#each Object.entries(rulesservice.rules) as [_, majorRule]}
   <MajRule rule={majorRule}>
     {#each Object.entries(majorRule.children || []) as [_, minorRule]}
