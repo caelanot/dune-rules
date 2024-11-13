@@ -855,10 +855,112 @@
         - name: Hand Limit
           text: Your hand limit is 5 Treachery Cards.
     - name: Advantages
+      children:
+        - name: Charity
+          id: choam_collection
+          karama: true
+          text: >
+            Each turn, you collect 2 spice for each faction in the game 
+            during CHOAM Charity before any factions collect. If another faction 
+            collects CHOAM Charity, it is paid to them from your spice.
+        - name: Open Market
+          karama: true
+          text: >
+            You may reveal cards with the exact same name (e.g., Snooper) from
+            your hand, and discard the surplus ones for 3 spice each at the end
+            of any Phase. You may also discard "Worthless" cards for 2 spice each
+            at the end of any Phase.
+        - name: Multipurpose Product
+          karama: true
+          text: >
+            You may discard Worthless cards for special effects in the following manner:
+          children:
+            - name: Baliset
+              text: >
+                Prevent a player from moving forces into a 
+                territory you occupy during Shipment and 
+                Movement. They may ship in normally. 
+            - name: Jubba Cloak
+              text: Prevent a loss of your forces in one territory to the Storm when it moves.
+            - name: Kull Wahad
+              text: Prevent a player from playing a Karama card this phase as they attempt to do so.
+            - name: Kulon
+              text: Move your forces one extra territory on your turn in Shipping and Movement.
+            - name: La La La
+              text: Prevent a player from taking Free Revival during Revival.
+            - name: Trip to Gamont
+              text: >
+                Send any 1 force belonging to another player to 
+                that player's reserves during the Mentat Pause.
+        - name: Revival
+          text: >
+            You have no free revival, but you have no limit to the 
+            number of forces you may pay to revive and it only costs you 1 spice 
+            for each force.
+        - name: Inflation
+          karama: true
+          text: >
+            During the Mentat Pause, you may place your Inflation 
+            token on the CHOAM Charity phase of the phase track (with either 
+            the Double or Cancel side face up).
+          children:
+            - name: Welfare State
+              text: >
+                During CHOAM Charity, the amount everyone collects from **Charity** 
+                `rule:choam_collection` is doubled.
+              children:
+                - name: Corrupt Officials
+                  text: >
+                    No Bribes can be made when your Inflation token is in play
+                    with the Double side up.
+            - name: Market Crash
+              text: >
+                During CHOAM Charity, the amount everyone collects from **Charity**
+                `rule:choam_collection` is zero.
+            - name: Inflation Fluxuation
+              text: >
+                In the next Mentat Pause, flip the Inflation token to 
+                the other side. If the token has already been flipped, 
+                you instead remove it from the game.
     - name: Alliance
+      children:
+        - name: Traded Goods
+          text: >
+            Once per turn, at the end of any phase, you may trade a Treachery 
+            Card with your ally. The trade must be two-way (each faction giving and 
+            receiving a card). 
+        - name: Battle Support
+          text: You may pay for some or all of your ally's forces in battle.
     - name: Advanced Advantages
+      children:
+        - name: Auditor
+          text: >
+            Gain the Auditor Leader Disc and shuffle the Auditor Traitor
+            Card into the Traitor deck at the start of the game.
+          children:
+            - name: Paid Intel
+              text: >
+                Whenever you use the Auditor as a leader in a battle, if the Auditor survived,
+                you may audit your opponent by looking at two cards in your opponent's 
+                hand at random (not counting any they used in battle), or one card if 
+                the Auditor is killed. That faction may pay you 1 spice per card you 
+                would get to see to cancel the entire audit.
+            - name: Replaceable
+              text: >
+                The Auditor may be revived from the Tleilaxu Tanks as your one revived
+                leader per turn, as if all of your leaders were in the Tleilaxu Tanks.
+            - name: Protections
+              text: >
+                The Auditor can not be a ghola for the Tleilaxu, nor captured
+                by the Harkonnens. The Auditor can not be assigned a Leader Skill Card.
+        - name: Forces
+          text: >
+            When other players pay spice for their forces in battle, half of the 
+            spice (rounded down) goes to you. When you pay spice for forces, it goes 
+            to the Spice Bank. None of the spice goes to you if a Traitor is revealed.
 
 - name: Richese
+  text: You have alternative technology.
   colorcode: richese
   children:
     - name: Faction Rules
@@ -869,6 +971,12 @@
             text: Start with 5 spice.
           - name: Forces
             text: 20 `glossary:force:forces` in reserves.
+          - name: Treachery Cache
+            text: >
+              Put the 10 Richese Treachery Cards marked with your faction symbol
+              near your player shield. These cards are not part of your hand.
+          - name: No-Field Tokens
+            text: Put the three "No-Field" tokens (numbered 0, 3, 5) in your supply.
         - name: Free Revival
           text: 2 `glossary:force:forces`.
     - name: Advantages
@@ -906,7 +1014,23 @@
         - name: Free Revival
           text: 2 `glossary:force:forces`.
     - name: Advantages
+      children:
+        - name: Terrorize
+          text: aaa
+          children:
+            - name: Assassination
+            - name: Atomics
+            - name: Extortion
+            - name: Robbery
+            - name: Sabotage
+            - name: Sneak Attack
     - name: Alliance
+      children:
+        - name: Battle
+          text: >
+            When your ally loses a battle that had a winner, they may keep one 
+            Treachery Card they played in the battle that they would have been able 
+            to keep had they won
     - name: Advanced Advantages
 
 - name: Treachery Cards
