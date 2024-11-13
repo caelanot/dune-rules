@@ -2,16 +2,12 @@
   import { theme } from '$lib/runes/theme.svelte';
 
   function toggle() {
-    var ct = theme.theme;
-    if (ct == 'light') theme.theme = 'dark';
-    else if (theme.theme == 'dark') theme.theme = 'auto';
+    if (theme.theme == 'light') theme.theme = 'dark';
     else theme.theme = 'light';
   }
 </script>
 
-<button onclick={toggle}>
-Dark Theme
-</button>
+<button onclick={toggle}> Dark Theme </button>
 
 <style>
   button {

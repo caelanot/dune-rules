@@ -1,5 +1,4 @@
 import { browser } from '$app/environment';
-import { onMount } from 'svelte';
 
 function createTheme() {
     let currentTheme = "auto";
@@ -12,11 +11,11 @@ function createTheme() {
     return {
         get theme() { return theme },
         set theme(value: string) {
+            theme = value;
             if (browser) {
                 localStorage.setItem('theme-preference', theme);
-                document.documentElement.setAttribute('data-theme', theme)
+                document.documentElement.setAttribute('data-theme', theme);
             }
-            theme = value;
         }
     }
 
