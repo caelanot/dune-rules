@@ -143,7 +143,7 @@
             During the Shipment and Movement Phase `rule:shipmovephase`,
             before anyone ships, you may look at the top card of the Spice Deck.
         - name: Prescience
-          id: battleprescience
+          id: atreides_prescience
           karama: true
           text: >
             During the Battle Phase `rule:battlewheels`, you may force your 
@@ -159,7 +159,7 @@
         - name: Prescience
           karama: true
           text: >
-            You may use ability **Prescience** `rule:battleprescience` in your ally's battles.
+            You may use ability **Prescience** `rule:atreides_prescience` in your ally's battles.
     - name: Advanced Game Advantages
       children:
         - name: Kwisatz Haderach
@@ -360,17 +360,19 @@
       children:
         - name: Sardaukar
           text: >
-            Your five starred `glossary:force:forces`, Sardaukar,
+            Your five starred `glossary:force:forces`, **Sardaukar**,
             have a special fighting capability.
           children:
             - name: Strength
               karama: true
-              text: Sardaukar `glossary:force:forces` are worth two normal forces in battle.
+              text: >
+                **Sardaukar** are worth two normal forces in battle.
               children:
                 - name: Weakness
-                  text: Sardaukar `glossary:force:forces` are worth just one force against Fremen forces.
+                  text: >
+                    **Sardaukar** are worth just one force against Fremen forces.
             - name: Revival
-              text: Only one Sardaukar `glossary:force` can be revived per turn.
+              text: Only one **Sardaukar** may be revived per turn.
         - name: Special Karama Power
           text: You may use a Karama Card to revive up to three of your Forces or one of your leaders for free.
 
@@ -480,11 +482,12 @@
             Your three starred `glossary:force:forces`, **Fedaykin**,
             have a special fighting capability.
           children:
-            - name: Fedaykin Strength
+            - name: Strength
               karama: true
-              text: Fedaykin forces are worth two normal forces in battle.
-            - name: Fedaykin Revival
-              text: Only one Fedaykin force can be revived per turn. 
+              text: >
+                **Fedaykin** are worth two normal forces in battle.
+            - name: Revival
+              text: Only one **Fedaykin** force can be revived per turn. 
         - name: Battles
           karama: true
           text: Your forces do not require spice to count at their full strength.
@@ -980,8 +983,120 @@
         - name: Free Revival
           text: 2 `glossary:force:forces`.
     - name: Advantages
+      children:
+        - name: Bidding
+          text: >
+            You have a separate cache of Richese Treachery Cards, and each turn
+            you must sell one of these cards, replacing a card from the deck.
+          children:
+            - name: Alternate Auction
+              karama: true
+              text: >
+                At the start of the Bidding Phase, declare whether the card you are
+                selling will be the first for bid, or the last for bid. Then, at the
+                proper time, sell this card using one of the following auction methods:
+              children:
+                - name: Once Around Auction
+                  id: richese_once_around
+                  text: >
+                    Choose a player to your left or right; starting with that player and
+                    continuing in that direction, each player has only one opportunity to
+                    place a bid on the card up for auction. Each player may pass or bid
+                    higher; the highest bidder `glossary:buy:buys` the card. If everyone
+                    else passes, you may gain the card for free or remove it from the game.
+                - name: Silent Auction
+                  id: richese_silent
+                  text: >
+                    All factions able to bid put any amount of spice in one hand (including
+                    zero spice). Factions reveal simultaneously. The faction that had the
+                    most spice in hand Buys the card (ties break according to Storm Order).
+                    If all factions bid zero spice, you may either gain the card for free
+                    or remove it from the game. Allies may not help buy cards in this Auction.
+            - name: Alternate Income
+              text: You collect payment on your cards sold to other factions.
+            - name: Proper Procedure
+              text: >
+                When you buy your own card, the spice goes to the Emperor or 
+                the Spice Bank normally. Whenever a Richese Treachery Card is
+                discarded it will go to the normal Treachery discard pile.
+                Your cards can't be bought or acquired with a Karama.
+        - name: No-Field
+          children:
+            - name: Shipping
+              karama: true
+              text: >
+                When making a shipment of forces, you may 
+                pay for one force and use a No-Field token instead of 
+                shipping normally. When you do, place a No-Field token 
+                face down in the territory where your shipment lands.
+                Return any No-Field tokens from infront of your Player Shield to your supply.
+            - name: No No-Field
+              text: There may never be two No-Field tokens on the Board at the same time.
+            - name: Not As It Seems
+              text: Once per turn you may reveal a No-Field token at any time before Battle Phase.
+            - name: Lost Forces
+              text: >
+                A No-Field token is revealed using ability **No-Field Revealed** 
+                `rule:richese_reveal_nofield` when the storm moves over or lands on it,
+                is caught in an explosion, or when a worm appears in that territory,
+                then normal effects apply.
+            - name: No-Field Reveal
+              id: richese_reveal_nofield
+              text: >
+                When a No-Field token is revealed, place the indicated number of forces from
+                your reserves (or all remaining reserve forces if you have fewer left)
+                into the territory and sector it occupies.
+            - name: Move As One
+              text: >
+                A No-Field token is treated as one force for purposes of
+                movement, spice collection, and occupancy limits.
+            - name: Surprise Assault
+              text: >
+                When you are in a battle, you must reveal the No-Field token in that 
+                territory when revealing your Battle Plan using ability **No-Field Reveal**
+                `rule:richese_reveal_nofield`.
+            - name: Blind Prescience
+              text: >
+                When Atreides uses ability **Prescience** `rule:atreides_prescience` on
+                you and a No-Field token is present,
+                they may not force you to reveal the number dialed.
     - name: Alliance
+      children:
+        - name: No-Field
+          karama: true
+          text: >
+            You may offer to ship an ally's Forces from off-planet using one of
+            your available No-Field tokens, revealing the Forces immediately upon
+            shipping.
+        - name: Treachery
+          text: >
+            At any time you may give your ally a Richese Treachery Card
+            from your hand if their hand is not full.
     - name: Advanced Advantages
+      children:
+        - name: Black Market
+          karama: true
+          text: >
+            At the start of the Bidding Round, before Declaration, you may
+            intervene and offer one Treachery Card from your hand up for auction.
+          children:
+            - name: Secret Auction
+              text: >
+                You may announce what you are selling, and you may lie, but you do
+                not show any player what is up for auction (although the Atreides
+                may still look). The card you offer from your hand may be auctioned
+                the normal way or by using ability **Once Around Auction**
+                `rule:richese_once_around` or **Silent Auction** `rule:richese_silent`.
+                If no other player bids any spice for your card, you must keep it, and
+                your intervention ends. If a card from your hand is sold, one fewer
+                Treachery Card is put up for auction as part of the normal Bidding Round.
+            - name: Bidding Procedure
+              text: >
+                Any bids on Black Market cards that use the normal bidding method
+                proceed in Storm Order, and normal bidding resumes where normal
+                bidding left off, or in Storm Order if **Once Around Auction**
+                `rule:richese_once_around` or **Silent Auction** `rule:richese_silent`
+                was used.
 
 - name: Ecaz
   colorcode: ecaz
@@ -1030,7 +1145,7 @@
           text: >
             When your ally loses a battle that had a winner, they may keep one 
             Treachery Card they played in the battle that they would have been able 
-            to keep had they won
+            to keep had they won.
     - name: Advanced Advantages
 
 - name: Treachery Cards

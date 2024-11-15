@@ -6,16 +6,14 @@
   import RuleButton from '$lib/RuleButton.svelte';
   import rulesservice from '$lib/rules.svelte';
 
-  import Button from '$lib/Button.svelte';
+  import NavBar from '$lib/NavBar.svelte';
 </script>
 
 <!-- <div>
   <RuleButton />
 </div> -->
 
-<div>
-  <Button/>
-</div>
+<!-- <NavBar/> -->
 
 {#each Object.entries(rulesservice.rules) as [_, majorRule]}
   <MajRule rule={majorRule}>
