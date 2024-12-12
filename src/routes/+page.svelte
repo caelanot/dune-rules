@@ -15,6 +15,8 @@
 
 <!-- <NavBar/> -->
 
+ <a href="/test">test</a>
+
 {#each Object.entries(rulesservice.rules) as [_, majorRule]}
   <MajRule rule={majorRule}>
     {#each Object.entries(majorRule.children || []) as [_, minorRule]}
