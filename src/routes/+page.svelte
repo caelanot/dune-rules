@@ -7,6 +7,7 @@
   import rulesservice from '$lib/rules.svelte';
 
   import NavBar from '$lib/NavBar.svelte';
+  import {base} from "$app/paths";
 </script>
 
 <!-- <div>
@@ -15,7 +16,7 @@
 
 <!-- <NavBar/> -->
 
- <a href="/test">test</a>
+ <a href="{base}/test">test</a>
 
 {#each Object.entries(rulesservice.rules) as [_, majorRule]}
   <MajRule rule={majorRule}>
