@@ -16,7 +16,7 @@
 
 <!-- <NavBar/> -->
 
- <a href="{base}/test">test</a>
+ <a href="./test">test</a>
 
 {#each Object.entries(rulesservice.rules) as [_, majorRule]}
   <MajRule rule={majorRule}>
