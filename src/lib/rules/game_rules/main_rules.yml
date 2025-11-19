@@ -1,0 +1,29 @@
+- name: Golden Rules
+  colorcode: rules
+  rules:
+    - name: Rules Conflicts
+    - name: Public and Private Information
+    - name: Bribes and Deals
+
+- name: Setup
+  colorcode: rules
+  rules:
+    - name: Prepare
+    - name: Assign Factions and Positions
+    - name: Setup Factions
+    - name: Traitors
+    - name: First Turn
+
+- name: Sequence of Play
+  colorcode: rules
+  text: DUNE is played over the course of up to 10 turns. Each turn consists of nine specific phases that must be completed in the exact sequence presented below.
+  rules:
+    - name: Storm Phase
+    - name: Spice Blow and Nexus Phase
+    - name: CHOAM Charity Phase
+    - name: Bidding Phase
+    - name: Revival Phase
+    - name: Shipment and Movement Phase
+    - name: Battle Phase
+    - name: Spice Collection Phase
+    - name: Mentat Pause Phase
