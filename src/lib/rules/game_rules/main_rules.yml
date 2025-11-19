@@ -2,17 +2,87 @@
   colorcode: rules
   rules:
     - name: Rules Conflicts
+      rules:
+        - name: Faction
+          text: A faction's abilities may contradict the rules. Faction abilities take precedence.
+        - name: Treachery Card
+          text: A Treachery Card may contradict the rules or faction abilities. Treachery cards take precedence.
+        - name: Variant
+          text: A variant may contradict the rules, faction abilities, or Treachery Card. Variants take precedence.
     - name: Public and Private Information
+      rules:
+        - name: Spice
+          text: The amount of spice that any player holds can be kept secret at all times.
+        - name: Treachery Cards
+          text: >
+            The amount of Treachery Cards that any player holds can be kept secret
+            at any time other than the Bidding Phase.
+        - name: Spice Discard
+          text: The Spice Card discard pile is public and can be searched.
+        - name: Treachery Discard
+          text: The Treachery Card discard pile is not public and cannot be searched.
     - name: Bribes and Deals
 
-- name: Setup
+- name: Game Setup
   colorcode: rules
   rules:
     - name: Prepare
+      rules:
+        - name: Spice Bank
+          text: Place all spice tokens in the Spice Bank.
+        - name: Spice Deck
+          text: Shuffle the Spice Deck and Put it face down next to the board.
+        - name: Treachery Deck
+          text: Shuffle the Treachery Deck and Put it face down next to the board.
     - name: Assign Factions and Positions
-    - name: Setup Factions
+      rules:
+        - name: Seat Players
+          text: Determine the seating order randomly.
+        - name: Choose Factions
+          text: Assign one faction to each player in any way.
+        - name: Take Faction
+          text: Each player takes their chosen faction's player shield, sheet, and pieces.
+        - name: Take Position
+          text: >
+            Players place their Player Marker on the player circle
+            closest to their shield and seat at the table.
     - name: Traitors
+      rules:
+        - name: Step 1
+          text: Remove the cards for all factions that are not in play from the Traitor Deck.
+        - name: Step 2
+          text: Shuffle the Traitor Deck thoroughly and deal 4 cards to each player.
+        - name: Step 3
+          text: Each player secretly selects 1 card to keep, Putting it face down behind their Player Shield.
+        - name: Step 4
+          text: The other cards will be Put face down next to their Player Marker.
+    - name: Setup Factions
+      rules:
+        - name: Spice
+          text: >
+            Spice equal to the amount indicated by each faction's **At Start - Spice**
+            ability is removed from the Spice Bank and put behind each player's respective shield.
+        - name: Forces
+          text: >
+            Each player's forces are placed on the board
+            as indicated by each faction's **At Start - Forces** ability. All forces in reserves
+            are put in front of each player's respective shield.
+        - name: At Start
+          text: Each player completes any remaining At Start abilities for their faction.
     - name: First Turn
+      rules:
+        - name: Starting Treachery Card
+          text: Deal 1 card from the Treachery Deck to each player.
+        - name: Turn Marker
+          text: Place the turn marker at 1 on the Turn Track.
+        - name: First Storm
+          id: first_storm
+          text: >
+            The Storm Marker is placed at a random location along the map edge using the following
+            procedure - the two players whose Player Markers are nearest on either side of the Storm
+            Start Sector secretly dial a number from 0 to 20 on the Battle Wheels. The two numbers are
+            simultaneously revealed and totaled, and the Storm Marker moved from the Storm Start Sector 
+            _counterclockwise_ around the map the sum total of sectors.
 
 - name: Sequence of Play
   colorcode: rules

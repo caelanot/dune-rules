@@ -2,11 +2,10 @@ import * as marked from "marked";
 import slugify from 'slugify';
 
 import main_rules from "./game_rules/main_rules.yml";
-import factions from "./game_rules/factions.yml";
-import treachery from "./game_rules/treachery.yml";
-import variants from "./game_rules/variants.yml";
-import classic from "./game_rules/classic.yml";
-import appendix from "./game_rules/appendix.yml";
+import gf9factions from "./game_rules/gf9/factions.yml";
+import gf9treachery from "./game_rules/gf9/treachery.yml";
+import gf9variants from "./game_rules/gf9/variants.yml";
+import gf9appendix from "./game_rules/gf9/appendix.yml";
 
 import type { Rule } from "./rule.ts";
 
@@ -29,8 +28,8 @@ export class RulesService {
     }
 
     public loadRules(rulesmodea: "classic" | "landsraad") {
-        let new_rules = main_rules.concat(factions, treachery, variants, appendix);
-        return this.getFormattedRules(new_rules)
+        let gf9_rules = main_rules.concat(gf9factions, gf9treachery, gf9variants, gf9appendix);
+        return this.getFormattedRules(gf9_rules)
     }
 
     public slugTitle(index: string, title: string): string {

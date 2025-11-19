@@ -1,0 +1,6 @@
+- name: Variants
+  rules:
+    - name: Nexus Cards
+    - name: Stronghold Cards
+    - name: Tech Tokens
+    - name: Discovery Tokens
