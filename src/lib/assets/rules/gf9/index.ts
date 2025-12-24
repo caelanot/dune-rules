@@ -1,0 +1,6 @@
+import mainrules from "./main_rules.yml"
+import factions from "./factions/index"
+import treachery from "./treachery_cards/index"
+import variants from "./variants/index"
+
+export default [mainrules, factions, treachery, variants]

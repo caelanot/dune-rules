@@ -1,0 +1,45 @@
+@use '$lib/scss/_mixins.scss' as *;
+
+@mixin base-theme {
+	@include define-color('primary', #ec3069);
+	@include define-color('secondary', #eeb4a5);
+	@include define-color('karama', #dd0933);
+
+	@include define-color('text', #23261c);
+	@include define-color('text-shade', #5d5f65);
+	@include define-color('text-inverse', #ffffff);
+	@include define-color('text-inverse-shade', #9eb4b5);
+
+	@include define-color('page-background', #f7ebd4);
+}
+
+@mixin dark-theme {
+
+    @include define-color("rules", #ffffff);
+
+	@include define-color('primary', #ec3069);
+	@include define-color('secondary', #2254f6);
+	@include define-color('karama', #dd0933);
+
+	@include define-color('text', #ffffff);
+	@include define-color('text-shade', #9eb4b5);
+	@include define-color('text-inverse', #1c1e26);
+	@include define-color('text-inverse-shade', #5d5f65);
+
+	@include define-color('page-background', #1c1e26)
+}
+
+:root {
+	@include base-theme;
+	// @include dark-theme;
+
+	&[data-theme='dark'] {
+		@include dark-theme;
+	}
+
+	&[data-theme='auto'] {
+		@media (prefers-color-scheme: dark) {
+			@include dark-theme;
+		}
+	}
+}

@@ -1,0 +1,89 @@
+- name: Atreides
+  # appendix: ATR
+  tag: atreides_prescience
+  id: faction_atreides
+  color: "#586a37"
+  text: You have limited prescience.
+  children:
+    - name: Faction Rules
+      children:
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 10 spice.
+          - name: Forces
+            text: 10 forces in _Arrakeen_ and 10 forces in reserves.
+          - name: Spice and Treachery Decks
+            text: >
+              Take the Spice Deck and Treachery Deck, and put
+              them near your player position. You manage these decks.
+        - name: Free Revival
+          text: 2 forces.
+    - name: Advantages
+      children:
+        - name: Filament Book
+          text: You, and only you, may keep written notes about Treachery Cards.
+        - name: Bidding
+          karama: You may not look at the current card up for bid.
+          text: >
+            During the bidding phase `rule:bidding_phase`, you may look at each 
+            Treachery Card as it comes up for purchase before 
+            any faction bids on it.
+        - name: Wormsign
+          karama: true
+          text: >
+            At the start of the Shipment and Movement Phase, you may look at the top card of the Spice Deck.
+        - name: Prescience
+          id: atreides_prescience
+          karama: true
+          text: >
+            During the Battle Phase `rule:battlewheels`, you may force your 
+            opponent to `glossary:reveal` your choice of one of the four 
+            elements they will use in their Battle Plan against you:
+            the leader, the weapon, the defense, or the number 
+            dialed. If you choose to ask about a weapon or defense 
+            and your opponent tells you that they are not playing 
+            that element during this battle, you may not then ask to 
+            see a different element.
+    - name: Alliance
+      children:
+        - name: Prescience
+          karama: true
+          text: >
+            You may use ability **Prescience** `rule:atreides_prescience` in your ally's battles.
+    - name: Advanced Game Advantages
+      children:
+        - name: Kwisatz Haderach
+          text: >
+            The Kwisatz Haderach starts out inactive and
+            the Kwisatz Haderach token may not be used.
+            Use the Kwisatz Haderach card and counter token
+            to secretly keep track of forces lost in battle.
+            Once you have lost 7 or more forces in battles,
+            the Kwisatz Haderach token becomes active for
+            the rest of the game.
+          children:
+            - name: Kwisatz Strength
+              karama: true
+              text: >
+                In your battle, you may add the Kwisatz
+                Haderach token's strength (+2) to your leader or Cheap Hero's
+                strength in one territory per turn.
+              children:
+                - name: Atreides Loyalty
+                  text: A leader accompanied by Kwisatz Haderach cannot turn traitor.
+                - name: Unprotected
+                  text: >
+                    If the leader or Cheap Hero is killed, the
+                    Kwisatz Haderach does not add its +2 strength.
+            - name: Prophecy Blinded
+              text: The Kwisatz Haderach can only be killed if blown up by a lasgun/shield explosion.
+            - name: Reawaken
+              text: When killed, the Kwisatz Haderach token must be revived like any other leader.
+            - name: Ascension
+              text: >
+                Alive or dead, the Kwisatz Haderach
+                does not prevent the Atreides from reviving
+                other leaders.
+        - name: Special Karama Power
+          text: You may use a Karama Card to look at any one player's entire Battle Plan.
