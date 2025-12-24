@@ -15,7 +15,7 @@
         <div class="rule major" id={rule.index}>
             <span class="index-link" id={rule.index}></span>
             <span class="index major">{rule.index_display}.</span>
-            <a href={'#' + ruleIndexes[rule.index]}>{rule.name}</a>
+            <a href="#{rule.index}">{rule.name}</a>
         </div>
 
         <div class="pretext">{rule.text}</div>
@@ -27,7 +27,7 @@
                 <div class="rule minor" id={ruleIndexes[crule.index]}>
                     <span class="index-link" id={crule.index}></span>
                     <span class="index minor">{crule.index_display}</span>
-                    <a href={'#' + ruleIndexes[crule.index]}>{crule.formatted_name}</a>
+                    <a href="#{crule.index}">{crule.formatted_name}</a>
 
                     <!-- {#if crule.text} -->
 
