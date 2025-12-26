@@ -1,14 +1,18 @@
 <script lang="ts">
-    import type { FAQEntry } from "$lib/interfaces";
-    import Faq from "./faq.svelte";
+    import type { FAQEntry } from '$lib/interfaces';
+    import Faq from './faq.svelte';
 
-    let { faqs }: { faqs: FAQEntry[]} = $props()
+    let { faqs }: { faqs: FAQEntry[] } = $props();
 </script>
 
-{#each faqs as faq}
-    <Faq {faq} />
-{/each}
+<div>
+    {#each faqs as faq}
+        <Faq {faq} />
+    {/each}
+</div>
 
 <style lang="scss">
-
+    div {
+        display: block;
+    }
 </style>

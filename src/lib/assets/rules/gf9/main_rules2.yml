@@ -1,0 +1,98 @@
+- name: Golden Rules
+
+- name: Game Setup
+  children:
+    - name: Setup
+      children:
+        - name: Spice Bank
+          text: Place all spice tokens in the Spice Bank.
+        - name: Spice Deck
+          text: Shuffle the Spice Deck and put it face down next to the board.
+        - name: Treachery Deck
+          text: Shuffle the Treachery Deck and put it face down next to the board.
+    - name: Factions and Positions
+    - name: Traitors
+    - name: First Turn
+      children:
+        - name: Starting Spice
+        - name: Starting Forces
+        - name: Turn Marker
+          text: Place the turn marker at 1 on the Turn Track.
+        - name: First Storm
+
+- name: Sequence of Play
+  children:
+    - name: Storm Phase
+      children:
+        - name: Storm Movement
+        - name: Damage
+        - name: Obstruction
+        - name: First Player
+    - name: Spice Blow and Nexus Phase
+    - name: CHOAM Charity Phase
+      children:
+        - name: Claiming CHOAM
+          text: Any player with 0 or 1 spice can collect spice to bring their total to 2 by calling out "CHOAM Charity".
+        - name: Fraud Safeguards
+          text: A player may only claim CHOAM Charity once per turn.
+    - name: Bidding Phase
+      children:
+        - name: Declaration
+        - name: Dealer
+        - name: Auction
+        - name: End of Bidding
+    - name: Revival Phase
+      children:
+        - name: Force Revival
+          children:
+            - name: Free Revival
+              text: A certain number of forces are revived for free as stated on the player sheet.
+            - name: Spice Revival
+              text: Any additional forces that may be revived must be done at a cost of 2 spice per force.
+              children:
+                - name: Payment
+                  text: All spice paid for force revival is placed in the Spice Bank.
+        - name: Leader Revival
+          children:
+            - name: Fighting Strength
+              text: To revive a leader, a player must pay that leader's fighting strength in spice.
+              children:
+                - name: Payment
+                  text: All spice paid for leader revival is placed in the Spice Bank.
+            - name: Revived Leader Status
+              text: A revived leader can be played normally and is still subject to being a traitor.
+            - name: Dead Again
+              text: If a revived leader is killed again, place it face down in the Tleilaxu Tanks. This leader cannot be revived again until all of the player's other revivable leaders have been revived, killed, and sent to the Tleilaxu Tanks again.
+    - name: Shipment and Movement Phase
+    - name: Battle Phase
+      children:
+        - name: Battle Determination
+        - name: Battle Plan
+          id: battle_battleplan
+          text: To resolve a battle, each player secretly formulates a Battle Plan.
+          children:
+            - name: Battle Wheels
+              id: battle_battlewheels
+              text: Each player picks up a Battle Wheel and secretly dials a number from zero to the number of forces they have in the disputed territory. Both players will lose the number of forces dialed on the Battle Wheel.
+            - name: Leaders
+            - name: Treachery Cards
+              text: Players with a leader or cheap hero may play a Weapon Treachery Card, a Defense Treachery Card, or both by holding them against the wheel.
+        - name: Battle Resolution
+          children:
+            - name: Winner
+              text: The winner is the player with the higher total of number dialed on the Battle Wheel, plus their leader's fighting strength.
+            - name: No Ties
+              text: In the case of a tie, the aggressor wins the battle.
+            - name: Weapons
+            - name: Killed Leaders
+            - name: Surviving Leaders
+            - name: Losing
+            - name: Winning
+    - name: Spice Collection Phase
+      children:
+        - name: Harvesting Spice
+        - name: Collection Rate
+          text: The collection rate is 2 spice per force. If the player occupies Carthag or Arrakeen, the collection rate is 3 spice per force.
+        - name: Unclaimed Spice
+          text: Uncollected spice remains where it is for future turns.
+    - name: Mentat Pause Phase

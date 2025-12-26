@@ -12,36 +12,115 @@
     <div class="rule-container major" style:border-color={rule.color}>
         <!-- no text at this level -->
 
-        <div class="rule major" id={rule.index}>
-            <span class="index-link" id={rule.index}></span>
+        <div class="rule major" id={ruleIndexes[rule.id || rule.index]}>
             <span class="index major">{rule.index_display}.</span>
-            <a href="#{rule.index}">{rule.name}</a>
+            <a href="#{ruleIndexes[rule.id || rule.index]}">{rule.name}</a>
         </div>
 
-        <div class="pretext">{rule.text}</div>
+        {#if rule.text}
+            <div class="text">{@html rule.text}</div>
+        {/if}
 
-        <FaqList faqs={rulesservice.faqs.filter((faq) => faq.rules.includes(rule.tag))} />
+        <div class="faq">
+            <FaqList faqs={rulesservice.faqs.filter((faq) => faq.rules.includes(rule.id))} />
+        </div>
 
         {#each rule.children as crule}
             <div class="rule-container minor">
-                <div class="rule minor" id={ruleIndexes[crule.index]}>
-                    <span class="index-link" id={crule.index}></span>
+                <div class="rule minor" id={ruleIndexes[crule.id || crule.index]}>
                     <span class="index minor">{crule.index_display}</span>
-                    <a href="#{crule.index}">{crule.formatted_name}</a>
-
-                    <!-- {#if crule.text} -->
-
-                    <!-- @if (childRule.text) {
-              <span
-                class="text child"
-                [innerHTML]="
-                  childRule.text | highlight: searchTerm : childRule.index
-                "
-              ></span>
-            } -->
+                    <a href="#{ruleIndexes[crule.id || crule.index]}">{crule.formatted_name}</a>
                 </div>
 
-                <div class="pretext">{crule.text}</div>
+                {#if crule.text}
+                    <div class="text">{@html crule.text}</div>
+                {/if}
+
+                <div class="faq">
+                    <FaqList
+                        faqs={rulesservice.faqs.filter((faq) => faq.rules.includes(crule.id))}
+                    />
+                </div>
+                {#each crule.children as grule}
+                    <div class="rule-container child">
+                        <div class="rule child" id={ruleIndexes[grule.id || grule.index]}>
+                            <span class="index child">
+                                {grule.index_display}
+                            </span>
+                            <span class="desc child">
+                                <a
+                                    class="name child"
+                                    href={'#' + ruleIndexes[grule.id || grule.index]}
+                                    >{grule.formatted_name}.</a
+                                >
+                                <span class="text child">{@html grule.text}</span>
+
+                                <FaqList
+                                    faqs={rulesservice.faqs.filter((faq) =>
+                                        faq.rules.includes(grule.id)
+                                    )}
+                                />
+
+                                {#if grule.children}
+                                    <ol class="romanized-list list sublist">
+                                        {#each grule.children as drule}
+                                            <li>
+                                                <a
+                                                    class="name child"
+                                                    id={ruleIndexes[drule.id || drule.index]}
+                                                    href={'#' +
+                                                        ruleIndexes[drule.id || drule.index]}
+                                                    >{drule.formatted_name}.</a
+                                                >
+
+                                                <span class="text child">{@html drule.text}</span>
+
+                                                <FaqList
+                                                    faqs={rulesservice.faqs.filter((faq) =>
+                                                        faq.rules.includes(drule.id)
+                                                    )}
+                                                />
+                                                {#if drule.children}
+                                                    <ol class="alphabeta-list list sublist">
+                                                        {#each drule.children as ddrule}
+                                                            <li>
+                                                                <a
+                                                                    class="name child"
+                                                                    id={ruleIndexes[
+                                                                        ddrule.id || ddrule.index
+                                                                    ]}
+                                                                    href={'#' +
+                                                                        ruleIndexes[
+                                                                            ddrule.id ||
+                                                                                ddrule.index
+                                                                        ]}
+                                                                    >{ddrule.formatted_name}.</a
+                                                                >
+
+                                                                <span class="text child"
+                                                                    >{@html ddrule.text}</span
+                                                                >
+
+                                                                <FaqList
+                                                                    faqs={rulesservice.faqs.filter(
+                                                                        (faq) =>
+                                                                            faq.rules.includes(
+                                                                                ddrule.id
+                                                                            )
+                                                                    )}
+                                                                />
+                                                            </li>
+                                                        {/each}
+                                                    </ol>
+                                                {/if}
+                                            </li>
+                                        {/each}
+                                    </ol>
+                                {/if}
+                            </span>
+                        </div>
+                    </div>
+                {/each}
             </div>
         {/each}
     </div>
@@ -71,7 +150,7 @@
         }
 
         &.child {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
     }
 
@@ -91,7 +170,7 @@
             font-weight: bold;
 
             margin-top: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
 
             @media (max-width: 576px) {
                 font-size: 18px;
@@ -139,7 +218,7 @@
         }
     }
 
-    .pretext {
+    .text {
         margin-bottom: 10px;
 
         @media (max-width: 576px) {
@@ -154,7 +233,11 @@
 
     .list {
         li:not(:last-child) {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
+    }
+
+    .faq {
+        display: block;
     }
 </style>

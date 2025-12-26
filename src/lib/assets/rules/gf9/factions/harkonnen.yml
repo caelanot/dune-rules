@@ -1,0 +1,33 @@
+- name: Harkonnen
+  tag: faction_harkonnen
+  color: "#191415"
+  text: You excel in treachery.
+  children:
+    - name: Faction Rules
+      children:
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 10 spice.
+          - name: Forces
+            text: 10 forces in _Carthag_ and 10 forces in reserves.
+          - name: Extra Treachery Card
+            text: Start with 2 Treachery Cards.
+        - name: Free Revival
+          text: 2 forces.
+        - name: Hand Limit
+          text: Your hand limit is 8 Treachery Cards.
+    - name: Advantages
+      children:
+        - name: Traitors
+          text: All of the Traitor cards you were dealt during Traitors setup can be used normally.
+        - name: Top Card
+          text: When you buy a card, you draw an extra card for free from the Treachery Deck.
+    - name: Alliance
+      children:
+        - name: Traitors
+          text: You may use your Traitor Cards on your ally's opponent. This is treated as if your ally played the Traitor Card.
+    - name: Advanced Game Advantages
+      children:
+        - name: Captured Leaders
+          text: Imagine there was a captured leaders description here I am too lazy right now also my computer is about to run out of battery

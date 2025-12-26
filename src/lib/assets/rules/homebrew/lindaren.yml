@@ -1,0 +1,42 @@
+- name: Lindaren
+  text: You deal in contraband.
+  color: "#1900a9"
+  children:
+    - name: Faction Rules
+      children:
+        - name: At Start
+          children:
+            - name: Spice
+              text: Start with 12 spice.
+            - name: Forces
+              text: 20 forces in reserves
+        - name: Free Revival
+          text: 2 forces.
+        - name: Armament Cache
+          text: You have a separate cache of 4 armament treachery cards, marked with your faction symbol. These cards are not part of your hand.
+    - name: Advantages
+      children:
+        - name: Armament Cache
+          children:
+            - name: Battle Draw
+              text: At the start of the Battle phase, perform one of two actions
+              children:
+                - name: Add
+                  text: Draw one armament from your cache into your hand, secretly choosing which card.
+                - name: Replace
+                  text: Return one face-up armament to your cache.
+            - name: Brittle Weaponry
+              text: Armaments do not count against the hand limit of any faction and are discarded after use. At the end of the Battle phase, all armaments are discarded.
+            - name: Face-up
+              id: faceup_armaments
+              text: Discarded armaments are placed face-up in front of your shield instead of in the discard pile. Face-up armaments in front of your shield are not part of your cache.
+        - name: Off-Manifest
+          text: At the end of the Shipment and Movement phase, in any one territory where you have forces (excluding those under storm), you may either send up to 3 forces to that territory from your reserves for free, or return up to 3 forces to your reserves from that territory for free.
+    - name: Alliance
+      children:
+        - name: Armament Stash
+          text: At the start of the Battle phase, you may add an armament from your cache to your ally's hand, either in addition to or instead of drawing an armament for yourself. Any armament added this way counts as an armament draw for the phase.
+    - name: Advanced Game Advantages
+      children:
+        - name: Concealed Cargo
+          text: After you purchase and look at a Treachery Card, if you have a face-up armament in front of your shield, you may immediately discard the purchased Treachery Card to return one of your face-up armaments to your cache.

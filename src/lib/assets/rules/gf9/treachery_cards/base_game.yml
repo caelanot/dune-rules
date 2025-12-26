@@ -1,5 +1,5 @@
 - name: Base Game
-  rules:
+  children:
     - name: Baliset
       text: Play as part of your Battle Plan, in place of a weapon, defense, or both. This card has no value in play, and you can discard it only by playing it in your Battle Plan.
     - name: Chaumas

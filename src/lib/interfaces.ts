@@ -5,7 +5,8 @@ export interface GameRule {
     index: string
     index_display: string
     appendix: string
-    tag: string
+    tag: string // Used to hide elements
+    id: string // Used to refer to other rules
 
     color: string
     pretext: string

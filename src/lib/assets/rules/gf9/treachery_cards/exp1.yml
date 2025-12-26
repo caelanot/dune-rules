@@ -1,0 +1,20 @@
+- name: Expansion 1
+  children:
+    - name: Amal
+      text: At the beginning of any phase, cause all players to discard half of the spice behind their shields, rounded up, to the Spice Bank.
+    - name: Artillery Strike
+    - name: Basilia Weapon
+      text: Play as part of your Battle Plan. Kills opponent's leader before battle is resolved. Opponent may protect their leader with a Poison Defense. You may keep this card if you win this Battle.
+    - name: Chemistry
+    - name: Harvester
+    - name: Hunter Seeker
+      text: Play as part of your Battle Plan. Kills opponent's leader before battle is resolved. Opponent may protect their leader with a Projectile Defense. You may keep this card if you win this Battle.
+    - name: Poison Blade
+    - name: Poison Tooth
+    - name: Shield
+    - name: Shield Snooper
+    - name: Snooper
+    - name: Thumper
+    - name: Weirding Way
+    - name: Kull Wahad
+      text: Play as part of your Battle Plan, in place of a weapon, defense, or both. This card has no value in play, and you can discard it only by playing it in your Battle Plan.

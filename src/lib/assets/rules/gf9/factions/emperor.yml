@@ -1,0 +1,42 @@
+- name: Emperor
+  tag: faction_emperor
+  color: "#82251f"
+  text: You have access to great wealth.
+  children:
+    - name: Faction Rules
+      children:
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 10 spice.
+          - name: Forces
+            text: 20 forces in reserves.
+        - name: Free Revival
+          text: 1 force.
+    - name: Advantages
+      children:
+        - name: Bidding
+          text: When another faction buys a Treachery Card, they pay the spice to you instead of the Spice Bank.
+          karama: The spice is paid to the Spice Bank.
+          children:
+            - name: Fair Market
+              text: You may not discount the price of Treachery Cards; the full price must be paid.
+    - name: Alliance
+      children:
+        - name: Wealth
+          text: You may give spice to your ally at any time for any reason. Spice you give to your ally goes behind their shield and is now their spice.
+        - name: Revival
+          text: You may spice for the revival of up to 3 extra of your ally's forces from the Tleilaxu Tanks.
+          karama: You cannot pay spice for extra revival.
+    - name: Advanced Game Advantages
+      children:
+        - name: Sardaukar
+          text: Your five starred forces, elite Sardaukar, have a special fighting capability.
+          children:
+            - name: Strength
+              text: Sardaukar are worth two normal forces in battle.
+              karama: Sardaukar are worth just one force.
+            - name: Weakness
+              text: Sardaukar are worth just one force against Fremen.
+            - name: Training
+              text: Only one Sardaukar force can be revived per turn.

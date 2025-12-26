@@ -1,16 +1,16 @@
 - name: Golden Rules
   colorcode: rules
-  rules:
+  children:
     - name: Rules Conflicts
-      rules:
-        - name: Faction
+      children:
+        - name: Factions
           text: A faction's abilities may contradict the rules. Faction abilities take precedence.
-        - name: Treachery Card
+        - name: Treachery Cards
           text: A Treachery Card may contradict the rules or faction abilities. Treachery cards take precedence.
-        - name: Variant
+        - name: Variants
           text: A variant may contradict the rules, faction abilities, or Treachery Card. Variants take precedence.
     - name: Public and Private Information
-      rules:
+      children:
         - name: Spice
           text: The amount of spice that any player holds can be kept secret at all times.
         - name: Treachery Cards
@@ -25,9 +25,9 @@
 
 - name: Game Setup
   colorcode: rules
-  rules:
+  children:
     - name: Prepare
-      rules:
+      children:
         - name: Spice Bank
           text: Place all spice tokens in the Spice Bank.
         - name: Spice Deck
@@ -35,7 +35,7 @@
         - name: Treachery Deck
           text: Shuffle the Treachery Deck and Put it face down next to the board.
     - name: Assign Factions and Positions
-      rules:
+      children:
         - name: Seat Players
           text: Determine the seating order randomly.
         - name: Choose Factions
@@ -47,7 +47,7 @@
             Players place their Player Marker on the player circle
             closest to their shield and seat at the table.
     - name: Traitors
-      rules:
+      children:
         - name: Step 1
           text: Remove the cards for all factions that are not in play from the Traitor Deck.
         - name: Step 2
@@ -57,7 +57,7 @@
         - name: Step 4
           text: The other cards will be Put face down next to their Player Marker.
     - name: Setup Factions
-      rules:
+      children:
         - name: Spice
           text: >
             Spice equal to the amount indicated by each faction's **At Start - Spice**
@@ -70,7 +70,7 @@
         - name: At Start
           text: Each player completes any remaining At Start abilities for their faction.
     - name: First Turn
-      rules:
+      children:
         - name: Starting Treachery Card
           text: Deal 1 card from the Treachery Deck to each player.
         - name: Turn Marker
@@ -89,9 +89,10 @@
   text: DUNE is played over the course of up to 10 turns. Each turn consists of nine specific phases that must be completed in the exact sequence presented below.
   rules:
     - name: Storm Phase
-      rules:
+      children:
         - name: Storm Movement
           id: storm_movement
+          text: In all subsequent Storm Phases, the two players who last used the Battle Wheels will independently dial a number from 1 to 3, simultaneously reveal their numbers, add them together, and then advance the Storm Marker from its current position *counterclockwise* around the map for the sum total of sectors.
         - name: Damage
           id: storm_damage
           text: Any forces in a sector of sand territory (except the Imperial Basin) over which the storm passes or stops are killed. Place these forces in the Tleilaxu Tanks. Forces that are not on a sand territory find protection from the storm. In addition any spice in a sector over which a storm passes or stops is removed to the Spice Bank.
@@ -102,15 +103,15 @@
           id: first_player
           text: The player whose Player Marker the storm next approaches is the *First Player* in each phase.
     - name: Spice Blow and Nexus Phase
-      rules:
+      children:
         - name: Top Card
-          rules: 
+          children: 
             - name: Territory
               text: This is a Spice Blow.
             - name: Shai-Hulud
 
     - name: CHOAM Charity Phase
-      rules:
+      children:
         - name: CHOAM Collection
           id: choam_collection
           text: A player with 0 or 1 spice can collect spice from the Spice Bank to bring their total to 2 by calling out "CHOAM Charity".
@@ -119,7 +120,7 @@
           text: A player may only claim CHOAM Charity once per turn.
     - name: Bidding Phase
       id: bidding_phase
-      rules:
+      children:
         - name: Declaration
           id: bidding_declaration
           text: Before bidding starts, all players must declare how many Treachery Cards they hold.
@@ -134,21 +135,21 @@
           id: bidding_transparency
           text: The amount (not the type) of Treachery Cards a player has in their hand must be made known upon request by another player during the Bidding Phase.
     - name: Revival Phase
-      rules:
+      children:
         - name: Force Revival
-          rules:
+          children:
             - name: Free Revival
               text: A certain number of forces are revived for free as stated on the player sheet.
             - name: Spice Revival
               text: Any additional forces that may be revived must be done at a cost of 2 spice per force.
-              rules:
+              children:
                 - name: Payment
                   text: All spice paid for force revival is placed in the Spice Bank.
         - name: Leader Revival
-          rules:
+          children:
             - name: Fighting Strength
               text: To revive a leader, a player must pay that leader's fighting strength in spice.
-              rules:
+              children:
                 - name: Payment
                   text: All spice paid for leader revival is placed in the Spice Bank.
             - name: Revived Leader Status
@@ -156,9 +157,9 @@
             - name: Dead Again
               text: If a revived leader is killed again, place it face down in the Tleilaxu Tanks. This leader cannot be revived again until all of the player's other revivable leaders have been revived, killed, and sent to the Tleilaxu Tanks again.
     - name: Shipment and Movement Phase
-      rules:
+      children:
         - name: Force Shipment
-          rules:
+          children:
             - name: Shipment of Reserves
               text: A player with off-planet reserves may make one shipment of any number of forces from their reserves to any one territory on the map.
             - name: Cost
@@ -167,12 +168,12 @@
               text: All spice paid for shipment is placed in the Spice Bank.
         - name: Force Movement
     - name: Battle Phase
-      rules:
+      children:
         - name: Battle Determination
         - name: Battle Plan
         - name: Battle Resolution
     - name: Spice Collection Phase
-      rules:
+      children:
         - name: Harvesting Spice
           text: Any player with forces in a sector of a territory in which there is spice may now collect that spice. This is done by taking the spice tokens you are entitled to from the territory and placing them behind your shield.
         - name: Collection Rate

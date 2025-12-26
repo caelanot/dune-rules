@@ -12,6 +12,11 @@ export class RulesService {
 
     public indexVisiblityHash: Record<string, any> = {};
 
+    public nav_headers = $derived(() => this.rules.map((rule, i) => ({
+        ...rule,
+        index: `${i + 1}`
+    })))
+
     public setRules(entries: RuleFAQData) {
         if (!entries) return;
         this.rules = entries.rules || [];
@@ -32,7 +37,7 @@ export class RulesService {
             // var new_index = rule.appendix ? `${rule.appendix}` :
             rule.index = `${curr_index}`;
             // rule.index_display = display.join('.');
-            rule.index_display = rule.appendix ? rule.appendix : rule.index
+            rule.index_display = rule.appendix ? rule.appendix : rule.index;
             allRules.push(rule);
 
             rule.children?.forEach((subRule: GameRule, subIndex: number) => {
@@ -47,7 +52,7 @@ export class RulesService {
         });
 
         allRules.forEach((rule) => {
-            indexHash[rule.index] = slugTitle(rule.index, rule.name);
+            indexHash[rule.id || rule.index] = slugTitle(rule.index, rule.name);
         });
 
         const renderer = getCustomRenderer(base_rules, indexHash);

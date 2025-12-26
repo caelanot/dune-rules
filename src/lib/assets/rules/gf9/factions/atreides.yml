@@ -1,7 +1,6 @@
 - name: Atreides
   # appendix: ATR
-  tag: atreides_prescience
-  id: faction_atreides
+  tag: faction_atreides
   color: "#586a37"
   text: You have limited prescience.
   children:
@@ -24,21 +23,18 @@
         - name: Filament Book
           text: You, and only you, may keep written notes about Treachery Cards.
         - name: Bidding
-          karama: You may not look at the current card up for bid.
           text: >
-            During the bidding phase `rule:bidding_phase`, you may look at each 
+            During the bidding phase, you may look at each 
             Treachery Card as it comes up for purchase before 
             any faction bids on it.
         - name: Wormsign
-          karama: true
           text: >
             At the start of the Shipment and Movement Phase, you may look at the top card of the Spice Deck.
         - name: Prescience
           id: atreides_prescience
-          karama: true
           text: >
-            During the Battle Phase `rule:battlewheels`, you may force your 
-            opponent to `glossary:reveal` your choice of one of the four 
+            During the Battle Phase, you may force your 
+            opponent to reveal your choice of one of the four 
             elements they will use in their Battle Plan against you:
             the leader, the weapon, the defense, or the number 
             dialed. If you choose to ask about a weapon or defense 
@@ -48,7 +44,6 @@
     - name: Alliance
       children:
         - name: Prescience
-          karama: true
           text: >
             You may use ability **Prescience** `rule:atreides_prescience` in your ally's battles.
     - name: Advanced Game Advantages
@@ -64,7 +59,6 @@
             the rest of the game.
           children:
             - name: Kwisatz Strength
-              karama: true
               text: >
                 In your battle, you may add the Kwisatz
                 Haderach token's strength (+2) to your leader or Cheap Hero's
