@@ -17,7 +17,8 @@
     import NavigationList from '$lib/components/navigation_list.svelte';
     import A from '$lib/components/a.svelte';
 
-    var name = 'HIHIO';
+
+    console.log("formatted rules", b.formatted_rules)
 </script>
 
 <!-- <div>

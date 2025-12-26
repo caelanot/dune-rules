@@ -1,12 +1,15 @@
 <script lang="ts">
     import { RulesService } from '$lib/rules-service.svelte';
     let { rulesservice }: { rulesservice: RulesService } = $props();
+
 </script>
 
-{#each rulesservice.rules as rule}
-    <button class="item-link" style:border-color="{rule.color}" onclick={() => {
-        console.log("akjshfkjsdhg")
-    }}> {rule.name} </button>
+{#each rulesservice.formatted_rules as rule}
+    <a href={'#' + rulesservice.indexRuleHash[rule.id || rule.index]}>
+        <div class="item-link" style:border-color={rule.color}>
+            {rule.name}
+        </div>
+    </a>
 {/each}
 
 <style lang="scss">
@@ -18,9 +21,5 @@
         border-left: 5px solid;
         display: flex;
         align-items: center;
-    }
-
-    button {
-        width: 100%;
     }
 </style>
