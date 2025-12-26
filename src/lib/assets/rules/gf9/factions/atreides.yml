@@ -28,6 +28,7 @@
             Treachery Card as it comes up for purchase before 
             any faction bids on it.
         - name: Wormsign
+          id: atreides_wormsign
           text: >
             At the start of the Shipment and Movement Phase, you may look at the top card of the Spice Deck.
         - name: Prescience
