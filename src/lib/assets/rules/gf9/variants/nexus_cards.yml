@@ -5,13 +5,18 @@
         - name: Atreides
           children:
             - name: Betrayal
+              text: Prevent the Atreides from using **Prescience** `rule:atreides_prescience`.
             - name: Cunning
+              text: 
             - name: Secret Ally
+              text: During a battle, you may use the Atreides **Prescience** `rule:atreides_prescience` advantage.
         - name: Bene Gesserit
           children:
             - name: Betrayal
             - name: Cunning
+              text: You may flip any or all groups of your advisors to fighters during your turn in the Shipping and Movement phase (all forces in a territory must end up the same type).
             - name: Secret Ally
+              text: During a battle, you may use the Bene Gesserit **Voice** advantage.
         - name: Emperor
           children:
             - name: Betrayal

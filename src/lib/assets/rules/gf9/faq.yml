@@ -1,3 +1,7 @@
 - q: Using Double Spice Blow Advanced rules, does Atreides get to look at two cards?
   a: No, only one.
   rules: atreides_wormsign
+
+- q: Can you return a force that is under storm?
+  a: Yes, you can.
+  rules: choam_triptogamont

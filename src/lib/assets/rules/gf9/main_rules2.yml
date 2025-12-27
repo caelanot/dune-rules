@@ -10,24 +10,61 @@
           text: Shuffle the Spice Deck and put it face down next to the board.
         - name: Treachery Deck
           text: Shuffle the Treachery Deck and put it face down next to the board.
-    - name: Factions and Positions
+    - name: Assign Factions and Positions
+      children:
+        - name: Seat Players
+          text: Determine the seating order randomly.
+        - name: Choose Factions
+          text: Assign one faction to each player in any way.
+        - name: Take Faction
+          text: Each player takes their chosen faction's player shield, sheet, and pieces.
+        - name: Take Position
+          text: >
+            Players place their Player Marker on the player circle
+            closest to their shield and seat at the table.
     - name: Traitors
-    - name: First Turn
+      children:
+        - name: Step 1
+          text: Remove the cards for all factions that are not in play from the Traitor Deck.
+        - name: Step 2
+          text: Shuffle the Traitor Deck thoroughly and deal 4 cards to each player.
+        - name: Step 3
+          text: Each player secretly selects 1 card to keep, Putting it face down behind their Player Shield.
+        - name: Step 4
+          text: The other cards will be Put face down next to their Player Marker.
+    - name: Setup Factions
       children:
         - name: Starting Spice
+          text: >
+            Spice equal to the amount indicated by each faction's **At Start - Spice**
+            ability is removed from the Spice Bank and put behind each player's respective shield.
         - name: Starting Forces
+          text: >
+            Each player's forces are placed on the board
+            as indicated by each faction's **At Start - Forces** ability. All forces in reserves
+            are put in front of each player's respective shield.
+        - name: At Start
+          text: Each player completes any remaining **At Start** abilities for their faction.
+    - name: First Turn
+      children:
         - name: Turn Marker
           text: Place the turn marker at 1 on the Turn Track.
         - name: First Storm
+          text: |
+            The first time the storm is moved, the Storm Marker is placed at a random location along the map edge using the following procedure: The two players whose Player Markers are nearest on either side of the Storm Start Sector will secretly dial a number from 0 to 20 on the wheels. The two numbers are simultaneously revealed, totaled and the Storm Marker moved from the Storm Start sector counterclockwise around the map for the sum total of sectors.
 
 - name: Sequence of Play
   children:
     - name: Storm Phase
       children:
         - name: Storm Movement
+          text: In all subsequent Storm Phases after turn 1, the two players who last used the Battle Wheels will independently dial a number from 1 to 3, simultaneously reveal their numbers, add them together, and then advance the Storm Marker from its current position counterclockwise around the map for the sum total of sectors.
         - name: Damage
+          text: Any forces in a sector of sand territory (except the Imperial Basin) over which the storm passes or stops are killed. Place these forces in the Tleilaxu Tanks. Forces that are not on a sand territory find protection from the storm. In addition, any spice in a sector over which a storm passes or stops is removed to the Spice Bank.
         - name: Obstruction
+          text: Forces may not move into, out of, or through a sector in storm. Forces may not battle if either force is in storm.
         - name: First Player
+          text: The player whose Player Marker the storm next approaches is the First Player in each phase.
     - name: Spice Blow and Nexus Phase
     - name: CHOAM Charity Phase
       children:
@@ -75,6 +112,12 @@
               id: battle_battlewheels
               text: Each player picks up a Battle Wheel and secretly dials a number from zero to the number of forces they have in the disputed territory. Both players will lose the number of forces dialed on the Battle Wheel.
             - name: Leaders
+              text: One Leader Disc is selected and placed face up in the slot on the wheel. A Cheap Hero Card may be played in lieu of a Leader Disc.
+              children:
+                - name: Commitment
+                  text: Leaders that survive battles may fight more than once in a single territory if needed, but no leader may fight in more than one territory during the same phase.
+                - name: Leader Announcement
+                  text: A player must always play either a leader or cheap hero card as part of their Battle Plan if possible. If it is not possible, they must announce that fact.
             - name: Treachery Cards
               text: Players with a leader or cheap hero may play a Weapon Treachery Card, a Defense Treachery Card, or both by holding them against the wheel.
         - name: Battle Resolution
@@ -88,6 +131,7 @@
             - name: Surviving Leaders
             - name: Losing
             - name: Winning
+        - name: Leader Return
     - name: Spice Collection Phase
       children:
         - name: Harvesting Spice

@@ -19,8 +19,6 @@
 
     import NavigationList from '$lib/components/navigation_list.svelte';
     import A from '$lib/components/a.svelte';
-
-    console.log('formatted rules', b.formatted_rules);
 </script>
 
 <div class="navbar">

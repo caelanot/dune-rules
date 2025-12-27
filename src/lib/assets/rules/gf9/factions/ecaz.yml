@@ -1,2 +1,19 @@
 - name: Ecaz
   color: "#873c8a"
+  text: You forge strong alliances.
+  children:
+    - name: Faction Rules
+      children:
+        - name: At Start
+          children:
+            - name: Spice
+              text: Start with 12 spice.
+            - name: Forces
+              text: 6 forces in the Imperial Basin. 14 forces in reserves (off-planet).
+            - name: Ambassador Supply
+              text: Take the Ecaz Ambassador token and 5 random Ambassador tokens from the remaining pool of Ambassador tokens to form a supply.
+        - name: Free Revival
+          text: 2 forces.
+    - name: Advantages
+    - name: Alliance
+    - name: Advanced Game Advantages

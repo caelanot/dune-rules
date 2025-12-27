@@ -10,12 +10,12 @@
           - name: Spice
             text: Start with 10 spice.
           - name: Forces
-            text: 20 forces in reserves.
+            text: 20 forces in reserves (off-planet).
         - name: Free Revival
           text: 1 force.
     - name: Advantages
       children:
-        - name: Bidding
+        - name: Payment for Treachery
           text: When another faction buys a Treachery Card, they pay the spice to you instead of the Spice Bank.
           karama: The spice is paid to the Spice Bank.
           children:
@@ -26,7 +26,7 @@
         - name: Wealth
           text: You may give spice to your ally at any time for any reason. Spice you give to your ally goes behind their shield and is now their spice.
         - name: Revival
-          text: You may spice for the revival of up to 3 extra of your ally's forces from the Tleilaxu Tanks.
+          text: You may pay spice for the revival of up to 3 extra of your ally's forces from the Tleilaxu Tanks.
           karama: You cannot pay spice for extra revival.
     - name: Advanced Game Advantages
       children:

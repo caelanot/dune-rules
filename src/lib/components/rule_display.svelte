@@ -29,7 +29,9 @@
             <div class="rule-container minor">
                 <div class="rule minor" id={ruleIndexes[crule.id || crule.index]}>
                     <span class="index minor">{crule.index_display}</span>
-                    <a href="#{ruleIndexes[crule.id || crule.index]}">{@html crule.formatted_name}</a>
+                    <a href="#{ruleIndexes[crule.id || crule.index]}"
+                        >{@html crule.formatted_name}</a
+                    >
                 </div>
 
                 {#if crule.text}

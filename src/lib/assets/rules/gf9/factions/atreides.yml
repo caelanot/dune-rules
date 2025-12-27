@@ -29,8 +29,7 @@
             any faction bids on it.
         - name: Wormsign
           id: atreides_wormsign
-          text: >
-            At the start of the Shipment and Movement Phase, you may look at the top card of the Spice Deck.
+          text: At the start of the Shipment and Movement Phase, you may look at the top card of the Spice Deck.
         - name: Prescience
           id: atreides_prescience
           text: >
@@ -46,7 +45,7 @@
       children:
         - name: Prescience
           text: >
-            You may use ability **Prescience** `rule:atreides_prescience` in your ally's battles.
+            You may use ability **Prescience** `rule:atreides_prescience` on your ally's opponent.
     - name: Advanced Game Advantages
       children:
         - name: Kwisatz Haderach
@@ -76,9 +75,6 @@
             - name: Reawaken
               text: When killed, the Kwisatz Haderach token must be revived like any other leader.
             - name: Ascension
-              text: >
-                Alive or dead, the Kwisatz Haderach
-                does not prevent the Atreides from reviving
-                other leaders.
+              text: Alive or dead, the Kwisatz Haderach does not prevent the Atreides from reviving other leaders.
         - name: Special Karama Power
           text: You may use a Karama Card to look at any one player's entire Battle Plan.

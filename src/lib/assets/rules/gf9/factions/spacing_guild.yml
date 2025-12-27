@@ -15,5 +15,8 @@
               text: You may ship any number of forces from any one territory to any other territory on the board.
             - name: Off-Planet Shipment
               text: You may ship any number of forces from any one territory back to your reserves.
+        - name: Half Price
+        - name: Spacing Guild Special Victory Condition
+          text: If no faction has been able to win the game by the end of play, you have prevented control of Dune and automatically win the game.
     - name: Alliance
     - name: Advanced Game Advantages
