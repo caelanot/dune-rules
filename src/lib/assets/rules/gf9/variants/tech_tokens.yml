@@ -1,0 +1,8 @@
+- name: Tech Tokens
+  children:
+    - name: Axlotl Tanks
+      text: If at least one player, including you, takes free revival, you collect 1 spice for every Tech Token you control. However if only the Tleilaxu player takes free revival, you do not collect spice.
+    - name: Heighliners
+      text: If at least one player, including you, ships forces from off-planet, you collect 1 spice for every Tech Token you control. However if only the Spacing Guild ships forces from off-planet, you do not collect spice.
+    - name: Spice Production
+      text: If at least one player, including you, takes CHOAM Charity, you collect 1 spice for every Tech Token you control. However if only the Bene Gesserit take CHOAM Charity, you do not collect spice.

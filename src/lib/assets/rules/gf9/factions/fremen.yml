@@ -1,0 +1,24 @@
+- name: Fremen
+  tag: faction_fremen
+  color: "#c1913e"
+  text: You are native to Dune and know its ways.
+  children:
+    - name: Faction Rules
+      children:
+        - name: At Start
+          children:
+            - name: Spice
+              text: Start with 3 spice.
+            - name: Forces
+              text: 10 forces distributed as you like on Sietch Tabr, False Wall South, and False Wall West; and 10 forces in reserves (on the far side of Dune).
+        - name: Free Revival
+          text: 3 forces.
+    - name: Advantages
+      children:
+        - name: Shipment
+          text: During shipment, you may bring any or all of your reserves for free onto the Great Flat or onto any one territory within two territories of the Great Flat (subject to storm and occupancy rules).
+        - name: Movement
+          text: During movement you may move your forces two territories instead of one.
+        - name: Fremen Special Victory Condition
+    - name: Alliance
+    - name: Advanced Game Advantages

@@ -14,7 +14,7 @@
 
         <div class="rule major" id={ruleIndexes[rule.id || rule.index]}>
             <span class="index major">{rule.index_display}.</span>
-            <a href="#{ruleIndexes[rule.id || rule.index]}">{rule.name}</a>
+            <a href="#{ruleIndexes[rule.id || rule.index]}">{@html rule.name}</a>
         </div>
 
         {#if rule.text}
@@ -29,7 +29,7 @@
             <div class="rule-container minor">
                 <div class="rule minor" id={ruleIndexes[crule.id || crule.index]}>
                     <span class="index minor">{crule.index_display}</span>
-                    <a href="#{ruleIndexes[crule.id || crule.index]}">{crule.formatted_name}</a>
+                    <a href="#{ruleIndexes[crule.id || crule.index]}">{@html crule.formatted_name}</a>
                 </div>
 
                 {#if crule.text}
@@ -51,7 +51,7 @@
                                 <a
                                     class="name child"
                                     href={'#' + ruleIndexes[grule.id || grule.index]}
-                                    >{grule.formatted_name}.</a
+                                    >{@html grule.formatted_name}.</a
                                 >
                                 <span class="text child">{@html grule.text}</span>
 
@@ -70,7 +70,7 @@
                                                     id={ruleIndexes[drule.id || drule.index]}
                                                     href={'#' +
                                                         ruleIndexes[drule.id || drule.index]}
-                                                    >{drule.formatted_name}.</a
+                                                    >{@html drule.formatted_name}.</a
                                                 >
 
                                                 <span class="text child">{@html drule.text}</span>
@@ -94,7 +94,7 @@
                                                                             ddrule.id ||
                                                                                 ddrule.index
                                                                         ]}
-                                                                    >{ddrule.formatted_name}.</a
+                                                                    >{@html ddrule.formatted_name}.</a
                                                                 >
 
                                                                 <span class="text child"

@@ -1,0 +1,71 @@
+- name: Nexus Cards
+  children:
+    - name: Nexus Card List
+      children:
+        - name: Atreides
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: Bene Gesserit
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: Emperor
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: Fremen
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: Harkonnen
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: Spacing Guild
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: Ixians
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: Tleilaxu
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: CHOAM
+          children:
+            - name: Betrayal
+              text: Force CHOAM to discard a card at random from their hand, and gain no spice for it.
+            - name: Cunning
+              text: You may discard any Treachery Card to use any Worthless Card special effect.
+            - name: Secret Ally
+        - name: Richese
+          children:
+            - name: Betrayal
+            - name: Cunning
+            - name: Secret Ally
+        - name: Ecaz
+          children:
+            - name: Betrayal
+            - name: Cunning
+              text: Gain Duke Vidal for this turn (even if he is captured, in the Tanks, or a ghola, and overriding Moritani). At the end of the turn, set him aside normally.
+            - name: Secret Ally
+              text: Force one player to reveal whether or not they have any of your leaders as Traitors (though not which leaders).
+        - name: Moritani
+          children:
+            - name: Betrayal
+              text: Remove a Terror token from the board, returning it to Moritani. It is not revealed.
+            - name: Cunning
+              text: When you place a Terror token, it may be placed in any territory on Arrakis, even one that already has a Terror token.
+            - name: Secret Ally
+              text: When you lose a battle that had a winner, keep one Treachery Card you played in the battle you would have been able to keep had you won.

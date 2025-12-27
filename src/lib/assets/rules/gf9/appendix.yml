@@ -1,0 +1,28 @@
+- name: Appendix
+  children:
+    - name: Faction Karama Powers
+      children:
+        - name: Atreides
+          text: You may use a Karama Card to look at any one player's entire Battle Plan.
+        - name: Bene Gesserit
+          text: Instead of a once a game ability, you may use any worthless card as if it is a Karama Card.
+        - name: Emperor
+          text: You may use a Karama Card to revive up to three of your Forces or one of your leaders for free.
+        - name: Fremen
+          text: You may use a Karama Card to place your sandworm token in any sand territory that you wish. This is treated as a normal sandworm.
+        - name: Harkonnen
+          text: You may use a Karama Card to take without looking any number of cards, up to the entire hand of any one player of your choice. For each card you take, you must give that player one of your cards in return.
+        - name: Spacing Guild
+          text: You may use a Karama Card to stop one off-planet shipment of any one player.
+        - name: Ixians
+          text: You may move the Hidden Mobile Stronghold 2 territories on your turn during Shipment and Movement, as well as make your normal movement.
+        - name: Tleilaxu
+          text: You may prevent a player from performing a revival (forces and/or leader).
+        - name: CHOAM
+          text: You may discard any Treachery Cards, even Worthless Cards, from your hand at any time and gain 3 spice each.
+        - name: Richese
+          text: You may pay 3 spice at any time to buy one of your Richese Treachery Cards, secretly choosing which one.
+        - name: Ecaz
+          text: If you played neither a weapon nor a defense, you may add the difference between your leader disc and your opponent's leader disc to your number dialed.
+        - name: Moritani
+          text: If you lose a battle, force your opponent to discard or keep any or all Treachery Cards they played.

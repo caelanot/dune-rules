@@ -1,0 +1,19 @@
+- name: Spacing Guild
+  color: "#b25b32"
+  text: You control all shipment onto and off Dune.
+  children:
+    - name: Faction Rules
+    - name: Advantages
+      children:
+        - name: Payment for Shipment
+          text: When another faction ships forces onto Dune, they pay the spice to you instead of the Spice Bank.
+        - name: Three Types of Shipment
+          children:
+            - name: Normal Shipment
+              text: You may ship normally from off-planet reserves to Dune.
+            - name: Cross-Planet Shipment
+              text: You may ship any number of forces from any one territory to any other territory on the board.
+            - name: Off-Planet Shipment
+              text: You may ship any number of forces from any one territory back to your reserves.
+    - name: Alliance
+    - name: Advanced Game Advantages

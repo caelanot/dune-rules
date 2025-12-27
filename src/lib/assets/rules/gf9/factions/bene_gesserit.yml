@@ -1,0 +1,14 @@
+- name: Bene Gesserit
+  color: "#223e6d"
+  text: You are adept in the ways of mind control.
+  children:
+    - name: Faction Rules
+      children:
+        - name: At Start
+          children:
+            - name: Spice
+              text: Start with 5 spice.
+            - name: Forces
+              text: Start with 1 force in the Polar Sink.
+        - name: Free Revival
+          text: 1 force.

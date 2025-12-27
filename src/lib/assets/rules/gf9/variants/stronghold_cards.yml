@@ -1,0 +1,16 @@
+- name: Advanced Stronghold Cards
+  children:
+    - name: Stronghold Cards List
+      children:
+        - name: Arrakeen
+          text: When paying spice for forces in battles here, 2 spice is paid automatically by the Spice Bank.
+        - name: Carthag
+          text: If you do not play a poison weapon in a battle here, any non-poison defense you play also counts as a Snooper
+        - name: Habbanya Sietch
+          text: You win ties in battle here, despite storm order or Juice of Sappho.
+        - name: Ixian Hidden Mobile Stronghold
+          text: Copy the Stronghold advantage of your choice for any other stronghold you control, declaring which one you are using before Battle Plans are made.
+        - name: Sietch Tabr
+          text: When you win battles here, you collect spice from the Spice Bank for the number your opponent dials (rounded down).
+        - name: Tuek's Sietch
+          text: Collect 2 spice from the Spice Bank for each Worthless card you play in battles here.
