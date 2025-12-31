@@ -1,19 +1,59 @@
 - name: Ecaz
   color: "#873c8a"
-  text: You forge strong alliances.
   children:
     - name: Faction Rules
       children:
         - name: At Start
           children:
-            - name: Spice
-              text: Start with 12 spice.
-            - name: Forces
-              text: 6 forces in the Imperial Basin. 14 forces in reserves (off-planet).
-            - name: Ambassador Supply
-              text: Take the Ecaz Ambassador token and 5 random Ambassador tokens from the remaining pool of Ambassador tokens to form a supply.
+          - name: Spice
+            text: Start with 12 spice.
+          - name: Forces
+            text: 6 forces in _Imperial Basin_ and 14 forces in reserves.
+          - name: Ambassadors
+            text: >
+              Form a supply of Ambassador tokens consisting of the Ecaz Ambassador token
+              and 5 random Ambassador tokens, put them face up in front of your player
+              shield. Put the five unused Ambassadors facedown near your shield.
         - name: Free Revival
           text: 2 forces.
     - name: Advantages
+      children:
+        - name: Ambassadors
+          children:
+            - name: Shipping
+            - name: Vulnerable
+              text: Ambassadors are vulnerable to game effects like storm or explosions, returning to your supply.
+            - name: Ambassador Effects
+              children:
+                - name: Ecaz
+                  text: Gain Duke Vidal if he is not in the Tanks, captured, or a ghola until used in a battle, or form an alliance with the faction triggering the token (if neither of you are allied and they agree to form an alliance). You may then give control of Duke Vidal to that faction for this turn if they allied with you. This token returns to your available supply.
+                - name: Atreides
+                  text: See that faction's hand.
+                - name: Bene Gesserit
+                  text: Trigger the effect of any Ambassador that was not part of your supply, then remove the Bene Gesserit Ambassador token from the game.
+                - name: CHOAM
+                  text: Discard any of your Treachery Cards and gain 3 spice for each one from the Spice Bank.
+                - name: Emperor
+                  text: Gain 5 spice from the Spice Bank.
+                - name: Fremen
+                  text: Move a group of your forces on the board to any territory (subject to storm and occupancy rules).
+                - name: Harkonnen
+                  text: Look at a random Traitor Card that faction holds.
+                - name: Ixian
+                  text: Discard a Treachery Card, then draw a new one from the deck.
+                - name: Richese
+                  text: Pay 3 spice to the Spice Bank to draw the top card of the Treachery Deck if your hand is not full.
+                - name: Spacing Guild
+                  text: Send up to 4 of your forces in reserves to any territory not in storm for free.
+                - name: Tleilaxu
+                  text: Revive one of your leaders or up to 4 of your forces for free.
     - name: Alliance
+      children:
+        - name: Ambassador Benefits
+          text: You may choose to have your ally benefit from a triggered Ambassador's effect.
     - name: Advanced Game Advantages
+      children:
+        - name: Loyalty
+          text: At the start of the game, before Traitors are drawn, set aside a random Traitor Card for your faction face up for all players to see. It is never added to the Traitor Deck. Draw Traitors normally.
+        - name: Collection
+          text: If you and your ally co-occupy Arrakeen, Carthag, and/or Tuek's Sietch, you both collect the full amount of spice for occupying the strongholds during the Spice Collection phase.

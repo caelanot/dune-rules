@@ -1,3 +1,42 @@
 - name: Moritani
   text: You resort to terrorism.
   color: "#5994b1"
+  children:
+    - name: Faction Rules
+      children:
+        - name: At Start
+          children:
+          - name: Spice
+            text: Start with 12 spice.
+          - name: Forces
+            text: 6 forces in any unoccupied territory and 14 forces in reserves.
+        - name: Free Revival
+          text: 2 forces.
+    - name: Advantages
+      children:
+        - name: Terrorize
+          children:
+            - name: Terror Token Effects
+              children:
+                - name: Assassination
+                  text: Choose a random leader from that player and send it to the Tanks. Collect spice for the killed leader (3 for Zoal).
+                - name: Atomics
+                  text: All forces in the territory go to the Tanks. Place the Atomics Aftermath token in the territory. No forces may ever ship into this territory (even Fremen). From this turn forward, your hand limit is reduced by 1 (as well as your ally's), discarding a random card if a hand exceeds the limit.
+                - name: Extortion
+                  text: Gain 5 spice from the Spice Bank, placed in front of your shield. Collect it in the Mentat Pause, then regain this Terror token unless any one player in storm order pays you 3 spice.
+                - name: Robbery
+                  text: Steal half the spice (rounded up) from that player or take the top card of the Treachery Deck (then discarding a card of your choice if you exceed your hand size).
+                - name: Sabotage
+                  text: Draw a random Treachery Card from that player and discard it if possible. Then you may give that player a Treachery Card of your choice from your hand.
+                - name: Sneak Attack
+                  text: Send up to 5 of your forces in reserves into that territory at no cost (subject to storm and occupancy rules), even if the Atomics Aftermath token is there.
+        - name: Enemy of my Enemy
+          # text: When a 
+        - name: Duke Vidal
+    - name: Alliance
+      children:
+        - name:
+          text: When your ally loses a battle that had a winner, they may keep one Treachery Card they played in the battle that they would have been able to keep had they won.
+    - name: Advanced Game Advantages
+      children:
+        - name: Assassinate Leaders

@@ -1,5 +1,6 @@
 - name: Atreides
   # appendix: ATR
+  icon: atreides.svg
   tag: faction_atreides
   color: "#586a37"
   text: You have limited prescience.

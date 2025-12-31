@@ -1,4 +1,5 @@
 - name: Harkonnen
+  icon: harkonnen.png
   tag: faction_harkonnen
   color: "#191415"
   text: You excel in treachery.
